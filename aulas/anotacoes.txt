@@ -1,0 +1,114 @@
+<!--Isso é um comentário: HTML-->
+---------------------------------
+Converter String para numero:
+Number.parseFloat()
+Number.parse.Int()
+Number(n)
+------------------------------------------
+Converter numero para String:
+String(n)
+n.toString()
+------------------------------------------
+formatos:
+var nome = window.prompt('Qual é o seu nome?')
+document.write(`Ola, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras!</br>`)
+document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}!`)
+--
+ <style>
+        body {
+            background-color: rgb(125, 125, 187);
+            color: white; /*Isso é um comentário: CSS*/
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: rgb(128, 223, 39)
+        }
+
+    </style>
+--------------------------------------------------------------------
+DOM: [Document Object Model]
+por MARCA:
+<h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <stong>DOM</stong> em JavaScript.</p>
+    <div>Clique em mim</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0]
+        document.write(p1.innerText)
+	//p1.style.color = 'blue'
+    </script>
+--
+por Nome [ID, CLASSE]:
+<h1>Iniciando estudos DOM</h1>
+    <div name="msg">Clique em mim</div>
+    <script>
+        var d = window.document.getElementsByName('msg')[0]
+	d.innerText = 'Ola!'
+    </script>
+--
+por Selector [ID:#, CLASS:.]:
+<div id="msg">Clique em mim</div>
+    <script>
+        var d = window.document.querrySelector('div#msg')
+	d.style.color = 'blue'
+    </script>
+--------------------------------------------------------------
+Interação com DOM:
+
+<style>
+        div#area {
+            background: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+           
+        }
+
+    </style>
+-----
+HTML:
+<div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+-----
+Javascript:
+a.addEventListener('click', clicar)
+a.addEventListener('mouseenter', entrar)
+a.addEventListener('mouseout', sair)
+---
+function clicar() {
+            a.innerText = 'CLICOU!'
+        }
+        function entrar() {
+            a.innerText = 'ENTROU!'
+        }
+        function sair() {
+            a.innerText = 'SAIU!'
+        }
+-----
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">Resultado</div>
+    <script>
+        function somar(){
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = s
+        }        
+    </script>
+------------------------------------------------
+CONDIÇÕES:
+aula 008 = 001
+
+
+
+
+
