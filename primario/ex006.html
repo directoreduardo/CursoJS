@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento DOM</title>
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+    <script>
+        /*
+        Caso eu não queria sujar meu HTML com as tags acima, posso usar no script. Que seria, como exemplo, assim:
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        */
+        var a = document.getElementById('area') //existe aqui um prolema de uso de memória (estudo de escopo), mas serve aqui de exemplo de simplificação
+        function clicar(){
+            a.innerText = 'Clicou!'
+            a.style.color = 'yellow'
+            a.style.backgroundColor = 'blue'
+        }
+        function entrar(){
+            a.innerText = 'Entrou!'
+            a.style.backgroundColor = 'red'
+        }
+        function sair(){
+            a.innerText = 'Saiu!'
+            a.style.color = 'white'
+            a.style.backgroundColor = 'green'
+        }
+    </script>
+</body>
+</html>
