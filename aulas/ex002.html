@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Em que país vocÊ nasceu?</h1>
+    Digite seu país: <input type="text" id="txt"> <input type="button" value="verificar" onclick="clicar()">
+    <div id="res"></div>
+    <script>
+        function clicar(){
+            var txt = document.querySelector('input#txt')
+            var res = document.querySelector('div#res')
+            var txtv = txt.value
+            res.innerHTML = `<p>O país que você nasceu é o <strong>${txtv}</strong>!</p>`
+            if(txtv == "brasil" || txtv == 'Brasil'){
+                res.innerHTML += `<p>Você é um <strong>Brasileiro</strong></p>`
+            }else{
+                res.innerHTML += `<p>Você é um <strong>Estrangeiro!</strong></p>`
+            }
+            /*
+            OU:
+
+            var txt = document.querySelector('input#txt')
+            var res = document.querySelector('div#res')
+            res.innerHTML = `<p>O país que você nasceu é o <strong>${txt.value}</strong>!</p>`
+            if(txt.value == 'brasil' || txt.value == 'Brasil'){
+                res.innerHTML += `<p>Você é um <strong>Brasileiro</strong></p>`
+            }else{
+                res.innerHTML += `<p>Você é um <strong>Estrangeiro!</strong></p>`
+            }*/
+        }
+    </script>
+</body>
+</html>
