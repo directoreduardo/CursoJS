@@ -1,7 +1,7 @@
 var agora = new Date()
 var diaSem = agora.getDay()
 console.log(diaSem)
-switch(diaSem){
+switch(diaSem){ //switch é uma expressão [switch(expressão)], não um condição [if(condição)]! O switch funciona melhor em dados pontuais, não em intervalos
     case 0:
         console.log('Domingo')
         break
@@ -20,7 +20,7 @@ switch(diaSem){
     case 5:
         console.log('Sexta')
         break
-    case 6:
+    default:
         console.log('Sabado')
         break  
-}
+} // "default:" seria o equivalente ao "else{}" do 'if(){}'. Porém é opcional, assim como o "break" na ultima sentença
