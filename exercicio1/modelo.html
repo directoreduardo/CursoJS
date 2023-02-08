@@ -17,9 +17,13 @@
                 Ano de Nascimento: <input type="number" name="txtano" id="txtano" min="0">
             </p>
             <p>
-                Sexo: <input type="radio" name="radsex"
-                id="masc" checked> <label for="masc">Masculino</label>
-                <input type="radio" name="radsex" id="fem"> <label for="fem">Feminino</label>
+                Sexo: 
+                <input type="radio" name="radsex"
+                id="masc" checked><!--Só um pode ser checked!--> 
+                <label for="masc">Masculino</label>
+                <input type="radio" name="radsex" id="fem"> 
+                <label for="fem">Feminino</label>
+                <!--ambos (name="") deve ter nomes iguais (neste caso: redsex) se não, caso os nomes fossem diferentes, ambos irão marcar e não deverá ter como desmarcar-->
             </p>
             <p>
                 <input type="button" value="Verificar" onclick="verificar()">
