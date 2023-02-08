@@ -9,6 +9,8 @@ function verificar(){
         var fsex = document.getElementsByName('radsex') //('redsex') [0] é a bolinha do masculino e o ('redsex') [1] é a bolinha do feminino
         var idade = ano - Number(fano.value) //o valor atual menos(-) o valor digitado no fano 
         var genero = ''
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
         if(fsex[0].checked){
             genero = 'Homem'
             if(idade>=0 && idade<10){
