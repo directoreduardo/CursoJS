@@ -16,7 +16,9 @@ section{
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.394)
 }
 img#foto{
-    
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
 }
 footer{
     color: aliceblue;
