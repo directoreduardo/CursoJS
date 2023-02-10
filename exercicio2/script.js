@@ -5,6 +5,7 @@ function tabuada(){
         window.alert('Por favor, digite um numero!')
     }else{
         let n = Number(num.value) // agora sim transformando o valor em número
+        
         // fazendo a tabuada só que em while():
         let c = 1
         tab.innerHTML = '' // para limpar a tabuada anterior, caso você queira adicionar uma logo em seguida
