@@ -24,5 +24,16 @@ function tabuada(){
         tab.appendChild(item)
        }
        */
+      // feito em do..while()
+      /*
+      let c = 1
+      tab.innerHTML = ''
+      do{
+        let item = document.createElement('option')
+        item.text = `${n} x ${c} = ${n*c}`
+        tab.appendChild(item)
+        c++
+      }while(c<=10)
+      */
     }
 }
