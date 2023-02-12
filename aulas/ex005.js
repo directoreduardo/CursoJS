@@ -10,8 +10,9 @@ let res = parimpar(437)
 console.log(res)
 */
 //--------------------
+//=0 é um parametro pré definido caso, por algum motivo, eu não chame ou n1 ou o n2 - sem essa pré definição acabaria retornando NaN:
 /*
-function soma(n1=0, n2=0){ //=0 é um parametro pré definido caso, por algum motivo, eu não chame ou n1 ou o n2 - sem essa pré definição acabaria retornando NaN
+function soma(n1=0, n2=0){ 
     return n1 + n2
 }
 console.log(soma(5,9))
@@ -22,6 +23,20 @@ let v = function(x){
     return x*2
 }
 console.log(v(5))
+*/
+//--------------------ARROW FUNCTIONS:
+// como não ha criação de var (ou let) e não há muito complexidade no bloco, apenas uma linha de código e um "return", eu posso, com o arrow function, tirar as chaves e tirar o "return" e simplificar deste jeito:
+/*
+let arrowF = () => 'Sou o retorno na Arrow Function' 
+console.log(arrowF())
+*/
+//--------------------IIFE - ou Função Imediata:
+// a diferença é que, aqui, voce não precisa chamar como "uma função", apenas chama a sua variável
+/*
+let retornoIIFE = (function(){
+    return 'Retorno de uma função imediata'
+})()
+console.log(retornoIIFE) 
 */
 //--------------------FATORIAL: TRADICIONAL:
 /*
