@@ -12,3 +12,11 @@ if(pos==-1){ // -1 em javascript é o vazio, neste caso, se o valor adicionado l
 }else{
     console.log(`O valor oito está na posicção ${pos}`) //  irá contar a ultima mostragem, neste caso, a que está com os valores ordenados com o método sort() e um índice a mais adicionado no método push()
 }
+// Outros exemplos:
+
+let str = 'hello'
+let count = 0
+while(count<str.length){
+    console.log(str[count]) // acesso a um índice de uma string
+    count++
+}

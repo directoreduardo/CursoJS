@@ -5,6 +5,7 @@ while(c <= 6){
 }
 
 /*
+// do..wihle execulta pelo menos uma vez o código, enquanto os outros só quando a condição for satisfeita
 var c = 1
 do{
     console.log(`Repetindo, numero: ${c}`)
