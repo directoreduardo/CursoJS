@@ -1,3 +1,4 @@
+
 var c = 1
 while(c <= 6){
     console.log(`Repetindo, numero: ${c}`)
@@ -19,4 +20,16 @@ for(var c = 1;c <= 6;c++){
 }
 */
 
+// Simplificando - se apenas houver uma linha de código e (no caso de do..while e while) for extremamente simples
+/*
+let i = 0
+while(i<=5)
+    console.log(i++)
 
+var c = 0
+do
+    console.log(c++)
+while (c <= 6)
+
+for(var c = 1;c <= 6;c++) console.log(`Repetindo, numero: ${c}`)
+*/
