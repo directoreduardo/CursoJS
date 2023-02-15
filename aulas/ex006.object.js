@@ -35,8 +35,6 @@ console.log(bracketNotation['metodo']())
 */
 
 
-
-
 //CeV exemplo
 console.log('------------------------------------------------------')
 let amigo ={
