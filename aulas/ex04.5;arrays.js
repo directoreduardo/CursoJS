@@ -1,3 +1,24 @@
+// O objeto Array do JS é um objeto global usado na construção de 'arrays': objetos de alto nível semelhante a listas
+// - são objetos tem, nativamente, diversos métodos embutidos para realizar diversos tipos de operações (dentre os diversos tipos de operações estão: inserir, remover, atravessar o array, e criar novos arrays)
+//- são heterogêneos (aceitam diversos tipos de dados dentro da mesma linha - inclusive outros arrays e objetos)
+//- não tem tamanho fixo (pode ser alterado a qualquer momento)
+//- dados não são necessariamente armazenados contiguamente - podem ser contíguos ou espaçados
+//- índices são acessados por meio de números a partir do 0
+
+/*
+// Criando array de forma literal
+let frutas = []
+// ou
+let frutas = ['maçã', 'banana']
+console.log(frutas.length) // 2
+*/
+/*
+// Outra maneira seria usando o operador new constrói um novo objeto por meio da função construtora do Array
+let frutas = new Array ['maça', 'banana'] // declarando os elementos como argumentos
+let arrTamanho = new Array[10] // dando o número de posições como argumentos (número de espaço dentro do array) - quando você faz isso, todos os espaços deste array vão inicar com o valor undefined
+console.log(frutas)
+*/
+
 let num = [5, 8, 2, 9, 3]
 console.log(num)
 num.sort() // irá deixar os valores em ordem 
