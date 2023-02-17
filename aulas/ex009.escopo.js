@@ -33,7 +33,7 @@ console.log('--------------------------------------')
 // PRÁTICA ALTAMENTE PERIGOSA!
 // Escopo global automático sem uso das palavras reservadas let, const e var
 
-// Exemplo1:
+// Exemplo:
 let obj = {func: function(){a = 10; console.log(a)}} // uma função anônima que será referente ao nome "func", "a" é uma variável sem a utilização de uma palavra chave; ponto e virgula necessário em um codigo em linha
 obj.func()
 a = 5 // alterando o valor de a
