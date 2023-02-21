@@ -58,3 +58,34 @@ let obj = {exemplo: 'exemplo'}
 thisBindEx = thisBindEx.bind(obj) // ao fazer essa atribuição, o this da função thisBindEx() não será mais global, mas o objeto 'obj'
 thisBindEx()
 console.log('-------------------------------')
+
+//----------CALL & APPLY
+// Nota: call() e apply() tem uma sintaxe idêntica. A diferença é que call() aceita uma lista de argumentos, enquanto apply() aceita um array de argumento
+//-----------------CALL--
+// O método call() chama uma função com um dado 'this' e argumentos passados individualmente. O call() permite que uma função/método, pertencente a um dado objeto, seja atribuido e chamado por um objeto diferente. Dessa forma podendo reutilizar o método de um objeto em diversos outros objetos
+
+//Exemplo
+let obj1 = {exemplo1: 'exemplo1', mostraThis: function thisCallEx(){
+    console.log(this)
+}}
+obj1.mostraThis() // chamando o método acima
+console.log() // pulando uma linha
+let obj2 = {exemplo2: 'exemplo2'} 
+// exemplo de lista de argumentos: fun.call(thisArg[, arg1[, arg2[, ...]]])
+// ou, traduzindo para o exemplo prático: mostraThis: function thisCallEx(a, b, c) — obj1.mostraThis.call(obj2, 1, 2, 3) 
+obj1.mostraThis.call(obj2) // "logando" o obj1 porém chamando como obj2
+console.log('-------------------------------')
+
+//--------------------------APPLY--
+// O método apply() chama um função com um dado valor this, e argumentos como uma array (ou um objeto array.like). Em outras palavras é um call que aceita argumentos por meio de um array ao invés de serem passados individualmente (um a um)
+
+//Exemplo
+let obj3 = {exemplo3: 'exemplo3', mostraThis2: function thisApplyEx(){
+    console.log(this)
+}}
+obj3.mostraThis2()
+console.log()
+let obj4 = {exemplo4: 'exemplo4'}
+// exemplo de array de argumentos: fun.apply(this.Arg, [argsArray])
+// ou, traduzindo para o exemplo prático: mostraThis2: function thisApplyEx(a, b, c) — obj3.mostraThis.apply(obj4, [1, 2, 3]) 
+obj3.mostraThis2.apply(obj4)
