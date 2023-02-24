@@ -25,3 +25,7 @@ console.log('-----')
 console.log(stringTransformada = umaString.toLocaleLowerCase()) // tudo em minúsculo
 console.log(stringTransformada = umaString.toLocaleUpperCase()) // tudo em maiúsculo
 console.log('-----')
+
+stringTransformada = umaString.trim() // irá cortar os espaços nas duas extremidades
+stringTransformada = umaString.trimStart() // irá cortar apenas no começo
+stringTransformada = umaString.trimEnd() // irá cortar apenas no final
