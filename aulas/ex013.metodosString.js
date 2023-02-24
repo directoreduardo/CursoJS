@@ -57,3 +57,16 @@ let str01 = 'NaN significa "não é um número". Infinity contem -Infinity e +In
 console.log(str01.search('número')) // retorna 24
 console.log(str01.search(NaN)) // retorna 0
 console.log(str01.search(Infinity)) // retorna 33
+console.log('=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=')
+
+// OUTRAS
+let stringDeTeste = 'Essa é uma string de teste para o estudo de métodos. Meu nome é Eduardo!'
+console.log(stringDeTeste.startsWith('Essa')) // se começa com esse valor = TRUE (pode ser alterada, por exemplo ('Essa', 2) - ai não seria mais 'Essa', mas 'sa')
+console.log(stringDeTeste.endsWith('uma', 10)) // fatiar até o elemento que represente o índice 10, no caso: 'uma' = TRUE
+console.log(stringDeTeste.includes('métodos')) // verifica se a String inclui ou não este valor representado = TRUE
+console.log(stringDeTeste.indexOf('é')) // começa contando da esquerda para direita, verifica qual índice e encontra essa palavra/letra acima = índice 5
+console.log(stringDeTeste.lastIndexOf('!')) // começa contando da direita para esquerda, verifica qual índice e encontra essa palavra/letra acima = índice 71
+console.log(stringDeTeste.valueOf()) // retorna a stirng em si
+
+console.log(stringDeTeste.charCodeAt(0)) // retorna o charCode, neste caso de 0 que é 'E' = 69
+console.log(String.fromCharCode(69)) // o contario, qual letra do alfabeto que é representado por 69 = 'E'
