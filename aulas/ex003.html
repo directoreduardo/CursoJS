@@ -5,16 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .conteudo{
+            text-align: center;
+            margin-top: 50px;
+        }
+        #number-increment{
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0px;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>titulo</h1>
-    </div>
-    <div>
+    <div class="conteudo">
         <h3>Incrementa e Decrementa</h3>
-        <input type="button" value="Decrementa">
-        <input type="button" value="Incrementa">
-        <p id="number-increment"></p>
+        <input type="button" value="Decrementa" onclick="decrementar()">
+        <input type="button" value="Incrementa" onclick="incrementar()">
+        <p id="number-increment">0</p>
     </div>
+    <script>
+        let numberIncrement = document.querySelector('#number-increment')
+        function incrementar(){
+            let num = parseInt(numberIncrement.textContent) // acessando uma string, o conteúdo dentro do texto (textContent); transformando em Number (parseInt())
+            numberIncrement.textContent = num + 1 // pegar o 'num' somar com +1, e devolver para textContent - o conteúdo, no caso, o 0
+        }
+        function decrementar(){
+            let num = parseInt(numberIncrement.textContent)
+            numberIncrement.textContent = num - 1
+        }
+    </script>
 </body>
 </html>
