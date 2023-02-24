@@ -22,5 +22,6 @@ console.log('-----')
 console.log(stringTransformada = umaString.substring(0, 5)) // basicamente faz a mesma coisa que o .slice()
 console.log('-----')
 
-console.log(stringTransformada = umaString.toLocaleLowerCase())
-console.log(stringTransformada = umaString.toLocaleUpperCase())
+console.log(stringTransformada = umaString.toLocaleLowerCase()) // tudo em minúsculo
+console.log(stringTransformada = umaString.toLocaleUpperCase()) // tudo em maiúsculo
+console.log('-----')
