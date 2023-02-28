@@ -41,6 +41,7 @@ console.log(v(5))
 //--------------------ARROW FUNCTIONS:
 /*
 // como não ha criação de var (ou let) e não há muito complexidade no bloco, apenas uma linha de código e um "return", eu posso, com o arrow function, tirar as chaves e tirar o "return" e simplificar deste jeito:
+// Por usar uma variável, ela é considerada uma expressão de função (let ex = function(){}), não uma declaração (function ex (){})
 
 let arrowF = () => 'Sou o retorno na Arrow Function' 
 console.log(arrowF())
