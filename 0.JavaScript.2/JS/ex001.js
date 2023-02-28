@@ -38,3 +38,17 @@ class Carro{
 let carro1 = new Carro('Audi', 2010)
 let carro2 = new Carro('Ferrari', 1996)
 console.log(carro1, carro2)
+console.log('--------------')
+
+// ---------------------------CALLBACK
+// Explicado melhor no ex001 da pasta HTML do JavaScript.2
+let somar = (x,y) => x + y
+let calcular = (x,y, computar) => computar(x,y)
+let resultado2 = calcular(20, 30, somar)
+console.log(resultado2)
+console.log()
+// função de alta ordem:
+let arr = [1,2,3]
+console.log(arr)
+let newArr = arr.map(x => x + x) // vou mapear para cada x (cada elemento x do meu array), vou colocar x + x (ele + ele)
+console.log(newArr)
