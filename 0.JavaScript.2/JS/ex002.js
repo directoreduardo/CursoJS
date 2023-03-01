@@ -33,3 +33,31 @@ class BackendDev extends Dev{
 let backend1 = new BackendDev('João', 25, "C#", 'Backend', 'SQL Server')
 console.log(backend1)
 backend1.saudacao()
+console.log('--=-=---=-=-=--==-=-=-=-=-=-=-=--=-=-=-=-=--')
+console.log()
+
+// ---------------------PROTOTYPES
+// É uma emulação de herança de classe
+
+let animal = {
+    som: 'um som de animal',
+    tipo: 'animal',
+    emitirSom: function(){
+        console.log(this.som)
+    }
+}
+let gato = {
+    som: 'miau',
+    tipo: 'gato'
+}
+Object.setPrototypeOf(gato, animal) // o prototype de gato (o objeto que é pai do objeto gato), vai ser animal
+gato.emitirSom() // caso o gato não tivesse a função 'som', ele iria buscar no 'objeto pai' e retornaria, portanto, "um som de animal". Ele só acessa o protótipo (animal) se não existir no original (gato)
+console.log('--------')
+let gatoRaivoso = {
+    tipo: 'gatoRaivoso',
+    miarForte: function(){
+        console.log(this.som.toUpperCase()) // o som: 'miau' em capslock
+    }
+}
+Object.setPrototypeOf(gatoRaivoso, gato)
+gatoRaivoso.miarForte()
