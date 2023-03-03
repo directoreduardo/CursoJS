@@ -18,9 +18,45 @@ let promise3 = new Promise((resolve, reject)=>{
 
 Promise.all([promise1, promise2, promise3]).then((messages)=>{ // depois que forem resolvidas todas essa promises (na lista), vou utilizar o then (ou catch), 'messages' vai ter todas a promises resolvidas
     console.log(messages)
+    console.log('-=-=-=-=-=-=-=-=-=-=-')
 })
 
 // Para poder ver somente a primeira promise que for resolvida (na ordem), a gente utiliza o .race. Neste caso em questão, a ultima promise será executa pois o tempo foi alterado através do setTimeout(())
 Promise.race([promise1, promise2, promise3]).then((message)=>{ // como apenas uma promise será resolvida, o 'message' é no singulor
     console.log(message)
+    console.log('-----')
 })
+
+// ------------ ASSYNC / AWAIT
+
+let cincoMil=()=>new Promise((resolve, reject)=>{
+    setTimeout(()=>resolve('promise cincoMil resolvida'),5000)
+})
+let mil=()=>new Promise((resolve, reject)=>{
+    setTimeout(()=>resolve('promise mil resolvida'),1000)
+})
+let quinhetos=()=>new Promise((resolve, reject)=>{
+    setTimeout(()=>resolve('promise quinhetos resolvida'),500)
+})
+let cem=()=>new Promise((resolve, reject)=>{
+    setTimeout(()=>resolve('promise cem resolvida'),100)
+})
+// E se eu quisesse que resolvesse a mais demorada primeiro, depois resolvesse a de 100, 500 e depois a de 1000?
+
+let resolvedoraDePromisesAssincronas = async() => { // 'async' indica que o código é assincrono, tendo possibilidade de fazer ele "esperar" usando o  'await' na frente do código assincrono
+    let resultado1 = await cincoMil()
+    console.log(`${resultado1}`)
+    let resultado2 = await quinhetos()
+    console.log(`${resultado2}`)
+    let resultado3 = await cem()
+    console.log(`${resultado3}`)
+    let resultado4 = await mil()
+    console.log(`${resultado4}`)
+    console.log(`+
+    Ultimo console a ser respondido:
+    ${resultado1}
+    ${resultado2}
+    ${resultado3}
+    ${resultado4}`)
+}
+resolvedoraDePromisesAssincronas()
