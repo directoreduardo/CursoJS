@@ -1,4 +1,4 @@
-//----Promise
+//------------PROMISES
 // É um objeto que é construido utilizando essa função construtora de promise [new Promise()]. É um objeto que vai representar uma eventual conclusão ou falha de uma operação assíncrona qualquer
 // Três situaçãoes: ele pode estar ou conluído ou ter tido uma falha, ou estar pendente para que seja realizada essa operação
 //- PENDING = PENDENTE; FULFILLED (ou RESOLVED) = RESOLVIDO; REJECTED = REJEITADA
