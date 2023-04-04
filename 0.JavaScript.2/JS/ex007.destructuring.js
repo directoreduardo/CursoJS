@@ -37,3 +37,17 @@ console.log('-=-=--==-=-')
 let key = "z"
 let {[key]: fol} = {z: "bar"}
 console.log(fol)
+
+// BONUS
+//---------- Parâmetros com Valores Predefinidos -----
+// jeito antigo
+/*
+function multiplicar(a, b){
+    b = typeof b !== 'undefined'?b: 1
+    a = typeof a !== 'undefined'?b: 1
+    return a*b
+}*/
+// jeito atual
+function multiplicar(a = 1, b = 1){
+    return a*b
+}
