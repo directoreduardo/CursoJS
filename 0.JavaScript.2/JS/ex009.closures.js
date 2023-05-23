@@ -37,7 +37,7 @@ console.log('---------------')
 //Uma soma sequencial, prepétua:
 //usando recursão*
 
-//soma(2)(3)(5)(10)(4)(-1)()
+//utilizando currying, exemplo: soma(2)(3)(5)(10)(4)(-1)()
 function soma(num1){
     return(num2) => {
         if (!num2){
