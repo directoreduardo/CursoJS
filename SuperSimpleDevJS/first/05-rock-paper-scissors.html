@@ -14,23 +14,50 @@
       font-size: 30px;
       font-weight: bold;
     }
+    .move-icon {
+      height: 50px;
+    }
+    .move-button {
+      background-color: transparent;
+      border: 3px solid white;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .result {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+    .score {
+      margin-top: 60px;
+    }
+    .reset-score-button {
+      border: none;
+      background-color: white;
+      font-size: 15px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <p class="title">Rock Paper Scissors</p>
-  <button onclick="playGame('rock')">Rock</button>
-  <button onclick="playGame('paper')">Paper</button>
-  <button onclick="playGame('scissors')">Scissors</button>
-  <p class="js-result"></p>
+  <button onclick="playGame('rock')" class="move-button"><img src="/SuperSimpleDevJS/imagens/rock-emoji.png" alt="rock" class="move-icon"></button>
+  <button onclick="playGame('paper')" class="move-button"><img src="/SuperSimpleDevJS/imagens/paper-emoji.png" alt="paper" class="move-icon"></button>
+  <button onclick="playGame('scissors')" class="move-button"><img src="/SuperSimpleDevJS/imagens/scissors-emoji.png" alt="scissors" class="move-icon"></button>
+  <p class="js-result result"></p>
   <p class="js-moves"></p>
-  <p class="js-score"></p>
+  <p class="js-score score"></p>
   <button onclick=" 
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
   localStorage.removeItem('score');
   updateScoreElement()
-  ">Reset Score</button>
+  " class="reset-score-button">Reset Score</button>
 
   <script>
     let score = JSON.parse(localStorage.getItem('score')) 
@@ -94,7 +121,9 @@
       localStorage.setItem('score', JSON.stringify(score));
       updateScoreElement()
       document.querySelector('.js-result').innerHTML = result
-      document.querySelector('.js-moves').innerHTML = `You picked ${playerMove}. Computer picked ${computerMove}`
+      document.querySelector('.js-moves').innerHTML = `You <img src="/SuperSimpleDevJS/imagens/${playerMove}-emoji.png" class="move-icon">
+    <img src="/SuperSimpleDevJS/imagens/${computerMove}-emoji.png" class="move-icon">
+    Computer`
     }
   </script>
 </body>
