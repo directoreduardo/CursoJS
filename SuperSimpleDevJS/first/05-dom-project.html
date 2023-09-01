@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM project (with CSS)</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .subscribe-button {
+      border: none;
+      background-color: black;
+      color: white;
+      padding: 10px 15px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+    .is-subscribe {
+      background-color: rgba(211, 211, 211, 0.688);
+      color: black;
+    }
+    
+    .cost-input {
+      font-size: 15px;
+      padding: 10px;
+    }
+    .calculate-button {
+      border: none;
+      background-color: green;
+      color: white;
+      font-size: 15px;
+      padding: 12px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button class="js-subscribe-button subscribe-button" onclick="subscribe()">
+  Subscribe 
+  </button> <!--O espaço no 'Subscribe' só é ignorado pela adição do 'innerText'-->
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Order under $40 = +$10 shipping.</p>
+  <p>Order over $40 = FREE shipping.</p>
+  <input class="js-cost-input cost-input" placeholder="Cost of order" onkeydown="handleCostKeydown()">
+  <button onclick="calculateTotal()" class="calculate-button">Calculate</button>
+  <p class="js-total-cost"></p>
+
+<script>
+  function subscribe() {
+    let buttonElement = document.querySelector('.js-subscribe-button');
+    if (buttonElement.innerText === 'Subscribe') {
+      buttonElement.innerHTML = 'Subscribed';
+      buttonElement.classList.add('is-subscribe') // classList é uma "classe adicionada", neste caso, ao clicar no botão. A praticidade disso é a junção com o CSS, podendo alterar o CSS com uma ação do JS, sendo assim, estilizar o botão
+    } else {
+      buttonElement.innerHTML = 'Subscribe';
+      buttonElement.classList.remove('is-subscribe') // esse será o oposto do adicionado acima, ou seja, quando o botão for clicado novamente, voltará ao estilo anterior. 
+    }
+  }
+
+  function calculateTotal() {
+    let inputElement = document.querySelector('.js-cost-input')
+    let cost = Number(inputElement.value) // Como não há HTML dentro do input, não usaremos a propriedade 'innerHTML', mas sim '.value'. 'Number' é justamente para covnerter o 'cost' (que é uma String) em number
+
+    if (cost < 40) {
+      cost += 10
+    }
+
+    document.querySelector('.js-total-cost').innerHTML = `$${cost}`
+  }
+  // Para certificar que a tecla ENTER execultará também a função. Vide: onkeydown
+  function handleCostKeydown() {
+    if (event.key === 'Enter') {
+    calculateTotal()
+    }
+  }
+</script>
+</body>
+</html>
