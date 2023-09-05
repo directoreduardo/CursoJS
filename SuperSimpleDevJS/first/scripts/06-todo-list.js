@@ -1,9 +1,9 @@
 let todoList = [{
   name: 'arroz',
-  data: '2022-12-22'
+  dueDate: '2023-09-05'
  }, {
   name: 'feijão',
-  data: '2022-12-22'
+  dueDate: '2023-09-05'
  }]
 renderTodoList()
 function renderTodoList() {
@@ -15,15 +15,13 @@ function renderTodoList() {
     "let name = todoObject.name", e 
     "let dueDate = todoObject.dueDate" - é a mesma coisa só q economizando uma linha
     */
-    let html = `<p>
-    ${name} ${dueDate}
+    let html = `
+    <div>${name}</div>
+    <div>${dueDate}</div>
     <button onclick="
       todoList.splice(${i}, 1)
       renderTodoList()
-    "> 
-    Delete
-    </button>
-    </p>` // 'splice' é o método de remover um valor de um array. O ',1' é caracteristico ao quantos numeros de valores eu quero remover, neste caso, apenas um valor deste index (${i}). E como atualizamos a lista de tarefas (todo), precisamos exibir ela novamente usando o 'renderTodoList()'
+    " class="delete-todo-button">Delete</button>` // 'splice' é o método de remover um valor de um array. O ',1' é caracteristico ao quantos numeros de valores eu quero remover, neste caso, apenas um valor deste index (${i}). E como atualizamos a lista de tarefas (todo), precisamos exibir ela novamente usando o 'renderTodoList()'
     todoListHTML += html
   }
   document.querySelector('.js-todo-list').innerHTML = todoListHTML
