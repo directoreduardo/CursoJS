@@ -8,6 +8,7 @@ function updateScoreElement() {
   document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
 }
 updateScoreElement()
+
 function pickComputerMove() {
   const randomNumber = Math.random();
   let computerMove = '';
@@ -20,6 +21,7 @@ function pickComputerMove() {
   }
   return computerMove;
 }
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove()
   let result = '';
@@ -62,4 +64,19 @@ function playGame(playerMove) {
   document.querySelector('.js-moves').innerHTML = `You <img src="/SuperSimpleDevJS/imagens/${playerMove}-emoji.png" class="move-icon">
 <img src="/SuperSimpleDevJS/imagens/${computerMove}-emoji.png" class="move-icon">
 Computer`
+}
+
+let isAutoPlaying = false
+let intervalID
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalID = setInterval(function() {
+      let playerMove = pickComputerMove()
+      playGame(playerMove)
+    }, 1000)
+    isAutoPlaying =  true
+  } else {
+    clearInterval(intervalID)
+    isAutoPlaying = false
+  }
 }
