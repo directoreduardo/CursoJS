@@ -70,7 +70,7 @@ let isAutoPlaying = false
 let intervalID
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalID = setInterval(function() {
+    intervalID = setInterval(() => {
       let playerMove = pickComputerMove()
       playGame(playerMove)
     }, 1000)
@@ -80,3 +80,22 @@ function autoPlay() {
     isAutoPlaying = false
   }
 }
+
+//------- EventListener no button 'scissors': --------
+
+document.querySelector('.js-scissors-button').addEventListener('click', () => {
+  playGame('scissors')
+})
+
+
+//------- Evento na qual se pode jogar usando o teclado, no caso 'r' para 'rock', 'p' para 'paper' e 's' para 'scissros' -------------:
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playGame('rock')
+  } else if (event.key === 'p') {
+    playGame('paper')
+  } else if (event.key === 's') {
+    playGame('scissors')
+  }
+})
+
