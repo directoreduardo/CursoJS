@@ -3,9 +3,45 @@ body {
   color: rgb(33, 33, 33);
   margin: 0;
 }
+
 p {
   margin: 0
 }
+
 button {
   cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+.limit-to-2-lines {
+  /*
+  Esses estilos limitarão o texto a 2 linhas. Qualquer coisa além de 2 linhas será substituído por '...'
+  Você pode encontrar esse código usando uma I.A. ou pesquisando no Google.
+  */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.button-primary {
+  color: rgb(33, 33, 33);
+  background-color: rgb(255, 216, 20);
+  border: 1px solid rgb(252, 210, 0);
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgb(213, 217, 217, 0.5);
+}
+
+.button-primary:hover {
+  background-color: rgb(247, 202, 0);
+  border: 1px solid rgb(242, 193, 0);
+}
+
+.button-primary:active {
+  background-color: rgb(255, 216, 20);
+  border-color: rgb(252, 210, 0);
+  box-shadow: none;
 }

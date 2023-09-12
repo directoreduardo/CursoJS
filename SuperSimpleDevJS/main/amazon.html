@@ -40,7 +40,52 @@
   </div>
 
   <div class="main">
-    <div class="prdoducts-grid js-products-grid"></div>
+    <div class="products-grid js-products-grid">
+      <div class="product-container">
+        <div class="product-image-container">
+          <img src="imagens/products/athletic-cotton-socks-6-pairs.jpg" class="product-image">
+        </div>
+
+        <div class="product-name limit-to-2-lines">
+          Black and Gray Athletic Cotton Socks - 6 Pairs
+        </div>
+
+        <div class="product-rating-container">
+          <img src="imagens/rating/rating-45.png" class="product-rating-stars">
+          <div class="product-rating-count">
+            87
+          </div>
+        </div>
+
+        <div class="product-price"> $10.90 </div>
+
+        <div class="product-quantity-container">
+          <select data-testid="quantity-selector" >
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+
+        <div class="product-spacer"></div>
+        
+        <div class="added-to-cart" data-testid="added-to-cart">
+          <img src="imagens/icons/checkmark.png">
+          " Added "
+        </div>
+
+        <button class="add-to-cart-button button-primary" data-testid="added-to-cart-button">
+          Add to Cart
+        </button>
+      </div>
+    </div>
   </div>
 
 </body>
