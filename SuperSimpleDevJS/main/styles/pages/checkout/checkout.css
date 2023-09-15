@@ -54,3 +54,167 @@ main {
 .cart-item-container {
   margin-bottom: 12px;
 }
+
+.payment-summary {
+  padding-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+  .payment-summary {
+    /*
+    grid-row: 1 - significa que este elemento será colocado na linha
+    1 na grade. (Normalmente, a linha em que um elemento está colocado é determinado pela ordem dos elementos no HTML. grid-row substitui esta ordem padrão).
+    */
+    grid-row: 1;
+    margin-bottom: 12px;
+  }
+}
+
+.delivery-date {
+  color: rgb(0, 118, 0);
+  font-weight: 700;
+  font-size: 19px;
+  margin-top: 5px;
+  margin-bottom: 22px;
+}
+
+.cart-item-details-grid {
+  display: grid;
+  /*
+  100px 1fr 1fr; - significa que a 2ª e a 3ª coluna ocuparão metade do espaço restante na grade (eles dividirão o espaço restante uniformemente).
+  */
+  grid-template-columns: 100px 1fr 1fr;
+  column-gap:  25px;
+}
+
+@media (max-width: 1000px) {
+  .cart-item-container {
+    grid-template-columns: 100px 1fr;
+    row-gap: 30px;
+  }
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 120px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.product-quantity .link-primary {
+  margin-left: 3px;
+}
+
+/*------------------------------*/
+
+.cart-item-container .new-quantity-input {
+  width: 50px;
+  font-size: 16px;
+}
+
+/*
+A 'caixa de texto de quantidade' e o 'link para salvar quantidade' são inicialmente oculto.
+*/
+.cart-item-container .new-quantity-input, .cart-item-container .save-quantity-link {
+  display: none;
+}
+
+/*------------------------------*/
+
+@media (max-width: 1000px) {
+   .delivery-options {
+    /*
+    grid-colum: 1; - significa que este elemento será colocado na coluna 1 da grade. 
+
+    / span 2; -  significa que este elemento ocupará 2 colunas na grade (normalmente, cada elemento ocupa 1 coluna na grade).
+    */
+    grid-column: 1 / span 2;
+  }
+}
+
+.delivery-options-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.delivery-option {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.delivery-option-input {
+  margin-left: 0px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.delivery-option-date {
+  color: rgb(0, 118, 0);
+  margin-bottom: 3px;
+}
+
+.delivery-option-price {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}
+
+.payment-summary-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.payment-summary-row {
+  display: grid;
+  /*
+  1fr auto; - significa que a largura da 2ª coluna será determinado pelos elementos dentro da coluna (auto). A primeira coluna ocupará o espaço restante.
+  */
+  grid-template-columns: 1fr auto;
+
+  font-size: 15px;
+  margin-bottom: 9px;
+}
+
+.payment-summary-money {
+  text-align: right;
+}
+
+.subtotal-row .payment-summary-money {
+  border-top: 1px solid rgb(222, 222, 222);
+}
+
+.subtotal-row div {
+  padding-top: 9px;
+}
+
+.total-row {
+  color: rgb(137, 39, 4);
+  font-weight: bold;
+  font-size: 18px;
+
+  border-top: 1px solid rgb(222, 222, 222);
+  padding-top: 18px;
+}
+
+.place-order-button {
+  width: 100%;
+  padding: 12px 0 12px 0;
+  border-radius: 8px;
+
+  margin-top: 11px;
+  margin-bottom: 15px;
+}
