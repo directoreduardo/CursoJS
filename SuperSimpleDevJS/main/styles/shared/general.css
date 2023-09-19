@@ -23,6 +23,10 @@ select {
   box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
 }
 
+select:focus, input:focus {
+  outline: 2px solid rgba(255, 217, 217, 0.5);
+}
+
 .limit-to-2-lines {
   /*
   Esses estilos limitarão o texto a 2 linhas. Qualquer coisa além de 2 linhas será substituído por '...'
@@ -60,4 +64,22 @@ select {
 
 .link-primary:hover {
   color: rgb(196, 80, 0);
+}
+
+.button-secondary {
+  color: rgb(33, 33, 33);
+  background-color: white;
+  border: 1px solid rgb(213, 217, 217);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+}
+
+.button-secondary:hover {
+  background-color: rgb(247, 250, 250);
+}
+
+.button-secondary:active {
+  background-color: rgb(237, 253, 255);
+  box-shadow: none;
 }
