@@ -10,22 +10,22 @@
   <link rel="stylesheet" href="styles/pages/amazon.css">
 </head>
 <body>
-  <div class="amazon-header">
-    <div class="amazon-header-left-section">
+  <header class="amazon-header">
+    <section class="amazon-header-left-section">
       <a href="amazon.html" class="header-link">
         <img src="imagens/amazon-logo-white.png" class="amazon-logo">
         <img src="imagens/amazon-mobile-logo-white.png" class="amazon-mobile-logo">
       </a>
-    </div>
+    </section>
 
-    <div class="amazon-header-middle-section">
+    <section class="amazon-header-middle-section">
       <input type="text" placeholder="Search" class="search-bar">
       <button class="search-button">
         <img src="imagens/icons/search-icon.png" class="search-icon">
       </button>
-    </div>
+    </section>
 
-    <div class="amazon-header-right-section">
+    <section class="amazon-header-right-section">
       <a href="orders.html" class="orders-link header-link">
         <span class="returns-text">Returns</span>
         <span class="orders-text">& Orders</span>
@@ -36,10 +36,24 @@
         <div class="cart-quantity js-cart-quantity">0</div>
         <div class="cart-text">Cart</div>
       </a>
-    </div>
-  </div>
+    </section>
 
-  <div class="main">
+    <section class="right-section-mobile">
+      <img src="imagens/icons/hamburger-menu.png" class="hamburger-menu-toggle">
+    </section>
+
+    <!--
+      <div>
+      <a href="orders.html">Returns & Orders</a>
+      <a href="checkout.html">
+        "Cart ("<span class="cart-quantity-mobile">3</span>")"
+      </a>
+    </div>
+    -->
+    
+  </header>
+
+  <main>
     <div class="products-grid js-products-grid">
       <div class="product-container">
         <div class="product-image-container">
@@ -86,7 +100,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </main>
 
 </body>
 </html>

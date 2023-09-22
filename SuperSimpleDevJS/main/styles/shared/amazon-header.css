@@ -146,3 +146,23 @@
   width: 26px;
   text-align: center;
 }
+
+.right-section-mobile {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .amazon-header-right-section {
+    display: none;
+  }
+
+  .right-section-mobile {
+    display: block;
+  }
+}
+
+.hamburger-menu-toggle {
+  display: block;
+  padding: 6px;
+  cursor: pointer;
+}
