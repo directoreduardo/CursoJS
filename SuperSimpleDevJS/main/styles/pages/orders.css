@@ -43,7 +43,7 @@ main {
   margin-right: 45px;
 }
 
-.order-header-label {
+.order-header-label, .order-header-section {
   font-weight: 700;
 }
 
