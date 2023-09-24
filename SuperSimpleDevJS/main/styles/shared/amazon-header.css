@@ -166,3 +166,34 @@
   padding: 6px;
   cursor: pointer;
 }
+
+.variation-name {
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.variation-options-container {
+  cursor: default;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.variation-option {
+  background-color: white;
+  border: 1px solid rgb(173, 177, 184);
+  padding: 5px 8px;
+  border-radius: 8px;
+
+  font-size: 15px;
+  margin-right: 3px;
+  margin-bottom: 7px;
+}
+
+.is-selected {
+  border: 2px solid rgb(231, 117, 2);
+  padding: 4px 7px;
+}
+
+.product-spacer {
+  flex: 1;
+}
