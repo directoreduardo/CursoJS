@@ -162,10 +162,7 @@ main {
 
   .product-actions {
     /*
-    grid-column: 2 - significa que este elemento será colocado
-    na coluna 2 da grade. (Normalmente, a coluna que
-    um elemento é colocado é determinado pela ordem
-    dos elementos do HTML. A grid-column substitui a ordem padrão
+    grid-column: 2 - significa que este elemento será colocado na coluna 2 da grade. (Normalmente, a coluna que um elemento é colocado é determinado pela ordem dos elementos do HTML. A grid-column substitui a ordem padrão
     */
     grid-column: 2;
     margin-bottom: 30px;
