@@ -32,10 +32,11 @@ select:focus, input:focus {
   Esses estilos limitarão o texto a 2 linhas. Qualquer coisa além de 2 linhas será substituído por '...'
   Você pode encontrar esse código usando uma I.A. ou pesquisando no Google.
   */
+  overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .button-primary {

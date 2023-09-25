@@ -140,3 +140,8 @@ main {
   padding: 8px;
   border-radius: 50px;
 }
+
+.product-name {
+  height: 35px;
+  margin-bottom: 5px;
+}
