@@ -1,0 +1,11 @@
+------
+
+Main idea of JavaScript
+
+1. Save the data (salvar os dados)
+
+2. Generate the HTML (gerar o HTML)
+
+3. Make it interactive (Tornarmos interativo)
+
+------
