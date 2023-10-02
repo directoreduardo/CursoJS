@@ -52,7 +52,7 @@
     -->
     
   </header>
-<!--APENAS EXEMPLOS COM DOIS PRODUCT-CONTAINER PARA DEMONSTRAR COMO SERIA CASO NÃO ESTIVESSE UTILIZANDO O DOM. PORÉM, AO SER CRIADO O PRODUCTS.JS, ESSES CODIGOS ABAIXOS NO HTML É INÚTIL E PODERIA SER APAGADO-->
+<!--APENAS EXEMPLOS COM DOIS PRODUCT-CONTAINER PARA DEMONSTRAR COMO SERIA CASO NÃO ESTIVESSE UTILIZANDO O DOM. PORÉM, AO SER CRIADO O PRODUCTS.JS (E AMAZON.JS), ESSES CODIGOS ABAIXOS NO HTML É INÚTIL E PODERIA SER APAGADO-->
   <main>
     <div class="products-grid js-products-grid">
       <div class="product-container">
@@ -167,6 +167,7 @@
     </div>
 
     <!--A ORDEM DOS ARQUIVOS JS SÃO NECESSARIO DESSA MANEIRA: Primeiro cria os produtos e, em seguida, esse arquivo (amazon.js) percorre (loops) os produtos e cria todos os HTML-->
+    <script src="scripts/data/cart.js"></script>
    <script src="scripts/data/products.js"></script>
     <script src="scripts/amazon.js"></script>
   </main>

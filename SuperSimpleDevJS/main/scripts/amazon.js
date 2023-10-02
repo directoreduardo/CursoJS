@@ -47,16 +47,20 @@ products.forEach((products) => {
           " Added "
         </div>
 
-        <button class="add-to-cart-button button-primary" data-testid="added-to-cart-button">
+        <button class="add-to-cart-button button-primary js-add-to-cart" data-testid="added-to-cart-button">
           Add to Cart
         </button>
       </div>
   `
 })
-console.log(productsHTML)
-
 //-------------------------------
 
 // Agora o último passo é pegar esse HTML e colocar na página, e podemos fazer isso usando o DOM.
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML
+
+document.querySelectorAll('.js-add-to-cart').forEach((button) => { //para cada um desses buttons, adicionaremos um ouvinte de eventos (neste caso, o evento de click + a função que queremos executar quando clicamos neste botão)
+  button.addEventListener('click', () => {
+    //aqui precisamos resover como adicionar este produto ao cart (carrinho)
+  })
+})
