@@ -87,12 +87,22 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => { //para cada u
       })
     }
 
-    
+    // [4] Agora iremos tornar interativo a quantidade do carrinho no canto superior direito. Faremos isso passo a passo. PRIMEIRO: precisamos calcular a quantidade ou o número total de peodutos em nosso cart (carrinho). SEGUNDO: vamos colocar essa quantidade aqui na página.
+
+    // PRIMEIRO: vamos calcular a quantidade total. Então isso vai percorrer (loop) cada objeto no cart. Em seguinda, precisamos de uma variável para armazenar a quantidade total. Então, à medida que percorremos (loop) esse array, adicionaremos a quantidade (quantity) de itens a essa variável (cartQuantity)
+    let cartQuantity = 0
+    cart.forEach((item) => {
+      cartQuantity += item.quantity //isso irá somar todas as quantiade e salvá-las nesta variável (cartQuantity)
+    })
+
+    // SEGUNDO: agora que temos a quantidade total, vamos colocar aqui na página (canto superior direito, no icone do carrinho) e podemos fazer isso usando o DOM. Para usar o DOM, primeiro precisamos de um elemento HTML (neste caso, 'js-cart-quantity') onde vamos colocar essa quantidade (cartQuantity).
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity //recebe cartQuantity que calculamos acima
+
+    //*console.log como exemplos na prática em que é necessario a constante avaliação
+    console.log(cartQuantity)
     console.log(cart)
   })
 })
 
-// Agora iremos tornar interativo a quantidade do carrinho no canto superior direito. Faremos isso passo a passo.
-
-
+//------------------------------------------------------
 // ¹ Data Attribute. Um atributo de dados é apenas outro atributo HTML, exceto que o objetivo de um atributo de dados é permitir anexar qualquer informação a um elemento HTML. Vide: 'data-product-id="${products.id}"'. Um atributo de dados é apenas um atributo HTML. Isso significa que segue as mesmas regras de sintaxe. Temos os nome do atributo à esquerda (data-product-id) e um valor de atributo à direita ("${products.id}"). A única diferença é que os atributos de dados devem começar com 'data-' e, então, podemos dar a eles qualquer nome que quisermos. Portanto, o propósito de um atributo de dados é que possamos anexar qualquer informação a um elemento (podemos anexar a imagem do produto ou o preço e assim por diante).
