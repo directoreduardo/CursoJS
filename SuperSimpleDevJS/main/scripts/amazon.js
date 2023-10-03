@@ -92,5 +92,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => { //para cada u
   })
 })
 
+// Agora iremos tornar interativo a quantidade do carrinho no canto superior direito. Faremos isso passo a passo.
+
 
 // ¹ Data Attribute. Um atributo de dados é apenas outro atributo HTML, exceto que o objetivo de um atributo de dados é permitir anexar qualquer informação a um elemento HTML. Vide: 'data-product-id="${products.id}"'. Um atributo de dados é apenas um atributo HTML. Isso significa que segue as mesmas regras de sintaxe. Temos os nome do atributo à esquerda (data-product-id) e um valor de atributo à direita ("${products.id}"). A única diferença é que os atributos de dados devem começar com 'data-' e, então, podemos dar a eles qualquer nome que quisermos. Portanto, o propósito de um atributo de dados é que possamos anexar qualquer informação a um elemento (podemos anexar a imagem do produto ou o preço e assim por diante).
