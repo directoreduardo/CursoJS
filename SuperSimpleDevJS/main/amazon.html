@@ -167,12 +167,13 @@
       </div>
     </div>
 
-    <!--A ORDEM DOS ARQUIVOS JS SÃO NECESSARIO DESSA MANEIRA: Primeiro cria os produtos (projects) e, em seguida, esse arquivo (amazon.js) percorre (loops) os produtos e cria todos os HTML - caso não utilize os módulos, o arquivo cart.js terá que ser o primeiro a ser criado, deste modo:
+    <!--A ORDEM DOS ARQUIVOS JS SÃO NECESSARIO DESSA MANEIRA: Primeiro cria os produtos (projects) e, em seguida, esse arquivo (amazon.js) percorre (loops) os produtos e cria todos os HTML - caso não utilize os módulos, o arquivo cart.js terá que ser o primeiro a ser criado, deste modo e logo em seguida o products.js, deste modo:
+
     <script src="data/cart.js"></script>
+    <script src="data/products.js"></script>
       
-      Porém estamos utilizando os módulos e a exclusão da tag do cart.js está explicada no texto em asterisco no arquivo cart.js, assim como o type="module" localizado na tag da amazon.js
+      Porém estamos utilizando os módulos e a exclusão da tag do cart.js e products.js está explicada no texto em asterisco no arquivo cart.js, assim como o type="module" localizado na tag da amazon.js
     -->
-   <script src="data/products.js"></script>
     <script type="module" src="scripts/amazon.js"></script>
   </main>
 </body>

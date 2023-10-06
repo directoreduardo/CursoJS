@@ -2,6 +2,28 @@
 
 export let cart = []
 
+export function addToCart(productId) {
+  // [2] Para o produto de camiseta não ser repetido duas vezes e cada um deles tendo a quantidade (quantity) de 1 fixado. O que realmente queremos fazer é um produto de camiseta com quantidade 2 (e assim por diante), porque é assim que vamos exibi-lo na página de cart (orders.html). Faremos isso passo a passo. PRIMEIRO: verificar se o produto já está no cart (carrinho). SEGUNDO: se estiver, aumentaremos apenas a quantidade de um. TERCEIRO: se não estiver, iremos adicioná-lo no cart.
+  //(PRIMEIRO). O "cartItem" conterá o 'produtcId' e o 'quantity'. Se encontrarmos o item correspondente, iremos salvá-lo nesta variável (matchingItem).
+  let matchingItem
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem
+    }
+  })
+  //(SEGUNDO). Caso o produto esteja no cart, vamos aumentar a quantidade de itens correpondentes um a um.
+  if (matchingItem) {
+    matchingItem.quantity += 1
+  } else {//(TERCEIRO). Caso o produto não esteja no cart, iremaos adicioná-lo ao carrinho
+
+    // [1] Vamos empurrar (push) um objeto porque queremos um produto e a quantidade
+    cart.push({
+      productId: productId,
+      quantity: 1
+    })
+  }
+}
+
 //-------------------------------------------
 // Explicação do 'export' + o type="module" + o import::
 //*******************************************

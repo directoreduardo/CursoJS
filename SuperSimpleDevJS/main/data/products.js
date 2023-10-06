@@ -2,7 +2,8 @@
 
 // Primeiro uma variável para salvar os dados, em seguida vamos criar algo que corresponda aos nossos dados. Neste caso, temos uma lista de produtos, portanto vamos criar um array porque um array representa uma lista. Os produtos da lista tem muitos valores, como imagem, nome e preço, então usaremos um objeto para representar cada produto, porque um objeto nos permite agrupar vários valores.
 
-let products = [{
+//ps: 'export' explicado no texto em asteriscos no arquivo cart.js
+export let products = [{
   id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
   image: 'imagens/products/athletic-cotton-socks-6-pairs.jpg" class="product-image',
   name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',

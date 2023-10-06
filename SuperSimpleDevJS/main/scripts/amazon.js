@@ -1,5 +1,6 @@
-//A explicação para essa primeira linha abaixo está explicada no texto em asterisco no arquivo cart.js
-import {cart} from '../data/cart.js'
+//A explicação para essas linhas abaixo está explicada no texto em asterisco no arquivo cart.js
+import {cart, addToCart} from '../data/cart.js'
+import {products} from '../data/products.js'
 
 //--------------
 
@@ -66,52 +67,35 @@ products.forEach((products) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML
 
+function updateCartQuantity() {
+  // [4] Agora iremos tornar interativo a quantidade do carrinho no canto superior direito. Faremos isso passo a passo. PRIMEIRO: precisamos calcular a quantidade ou o número total de peodutos em nosso cart (carrinho). SEGUNDO: vamos colocar essa quantidade aqui na página.
+
+  // PRIMEIRO: vamos calcular a quantidade total. Então isso vai percorrer (loop) cada objeto no cart. Em seguinda, precisamos de uma variável para armazenar a quantidade total. Então, à medida que percorremos (loop) esse array, adicionaremos a quantidade (quantity) de itens a essa variável (cartQuantity)
+  let cartQuantity = 0
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity //isso irá somar todas as quantiade e salvá-las nesta variável (cartQuantity)
+  })
+
+  // SEGUNDO: agora que temos a quantidade total, vamos colocar aqui na página (canto superior direito, no icone do carrinho) e podemos fazer isso usando o DOM. Para usar o DOM, primeiro precisamos de um elemento HTML (neste caso, 'js-cart-quantity') onde vamos colocar essa quantidade (cartQuantity).
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity //recebe cartQuantity que calculamos acima
+}
+
 document.querySelectorAll('.js-add-to-cart').forEach((button) => { //para cada um desses buttons, adicionaremos um ouvinte de eventos (neste caso, o evento de click + a função que queremos executar quando clicamos neste botão)
   button.addEventListener('click', () => {
-    //aqui precisamos resover como adicionar este produto ao cart (carrinho). Para resolver isso¹
+    //aqui precisamos resover como adicionar este produto ao cart (carrinho). Para resolver isso(¹)
 
-    //o "dataset" (propriedade de conjuto de dados) basicamente nos fornece todos os atributos de dados anexados a este botão. Para acessar o ID do produto, basta digitar (.productId). Portanto, observe que o nome é convertido de Kebab case (product-id) para caixa Camel case.
+    // O "dataset" (propriedade de conjuto de dados) basicamente nos fornece todos os atributos de dados anexados a este botão. Para acessar o ID do produto, basta digitar (.productId). Portanto, observe que o nome é convertido de Kebab case (product-id) para caixa Camel case.
     //***Antes, há um problema que temos que resolver aqui: não é bom usar o nome (product-nome/productName) do produto para identificá-lo no cart, porque em um site de comércio eletrônico, podemos na verdade ter dois produtos com o mesmo nome, mas de marcas diferentes. Então para concertar isso, devemos dar um ID pra cada produto (que já está colocado), e esse ID deve ser único. Então iremos dar um ID para esses produtos, ao invés de usar o nome.
     let productId = button.dataset.productId
 
-
-    // [2] Para o produto de camiseta não ser repetido duas vezes e cada um deles tendo a quantidade (quantity) de 1 fixado. O que realmente queremos fazer é um produto de camiseta com quantidade 2 (e assim por diante), porque é assim que vamos exibi-lo na página de cart (orders.html). Faremos isso passo a passo. PRIMEIRO: verificar se o produto já está no cart (carrinho). SEGUNDO: se estiver, aumentaremos apenas a quantidade de um. TERCEIRO: se não estiver, iremos adicioná-lo no cart.
-    //(PRIMEIRO). O "item" conterá o 'produtcId' e o 'quantity'. Se encontrarmos o item correspondente, iremos salvá-lo nesta variável (matchingItem).
-    let matchingItem
-    cart.forEach((item) => {
-      if (productId === item.productId) {
-        matchingItem = item
-      }
-    })
-    //(SEGUNDO). Caso o produto esteja no cart, vamos aumentar a quantidade de itens correpondentes um a um.
-    if (matchingItem) {
-      matchingItem.quantity += 1
-    } else {//(TERCEIRO). Caso o produto não esteja no cart, iremaos adicioná-lo ao carrinho
-      // [1] Vamos empurrar (push) um objeto porque queremos um produto e a quantidade
-      cart.push({
-        productId: productId,
-        quantity: 1
-      })
-    }
-
-    // [4] Agora iremos tornar interativo a quantidade do carrinho no canto superior direito. Faremos isso passo a passo. PRIMEIRO: precisamos calcular a quantidade ou o número total de peodutos em nosso cart (carrinho). SEGUNDO: vamos colocar essa quantidade aqui na página.
-
-    // PRIMEIRO: vamos calcular a quantidade total. Então isso vai percorrer (loop) cada objeto no cart. Em seguinda, precisamos de uma variável para armazenar a quantidade total. Então, à medida que percorremos (loop) esse array, adicionaremos a quantidade (quantity) de itens a essa variável (cartQuantity)
-    let cartQuantity = 0
-    cart.forEach((item) => {
-      cartQuantity += item.quantity //isso irá somar todas as quantiade e salvá-las nesta variável (cartQuantity)
-    })
-
-    // SEGUNDO: agora que temos a quantidade total, vamos colocar aqui na página (canto superior direito, no icone do carrinho) e podemos fazer isso usando o DOM. Para usar o DOM, primeiro precisamos de um elemento HTML (neste caso, 'js-cart-quantity') onde vamos colocar essa quantidade (cartQuantity).
-    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity //recebe cartQuantity que calculamos acima
-
+    addToCart(productId) 
+    updateCartQuantity()
+    
     //*console.log como exemplos na prática em que é necessario a constante avaliação
     console.log(cartQuantity)
     console.log(cart)
   })
 })
 
-
-
-//------------------------------------------------------
-// ¹ Data Attribute. Um atributo de dados é apenas outro atributo HTML, exceto que o objetivo de um atributo de dados é permitir anexar qualquer informação a um elemento HTML. Vide: 'data-product-id="${products.id}"'. Um atributo de dados é apenas um atributo HTML. Isso significa que segue as mesmas regras de sintaxe. Temos os nome do atributo à esquerda (data-product-id) e um valor de atributo à direita ("${products.id}"). A única diferença é que os atributos de dados devem começar com 'data-' e, então, podemos dar a eles qualquer nome que quisermos. Portanto, o propósito de um atributo de dados é que possamos anexar qualquer informação a um elemento (podemos anexar a imagem do produto ou o preço e assim por diante).
+//-----------------------------------------------
+// (¹) Data Attribute. Um atributo de dados é apenas outro atributo HTML, exceto que o objetivo de um atributo de dados é permitir anexar qualquer informação a um elemento HTML. Vide: 'data-product-id="${products.id}"'. Um atributo de dados é apenas um atributo HTML. Isso significa que segue as mesmas regras de sintaxe. Temos os nome do atributo à esquerda (data-product-id) e um valor de atributo à direita ("${products.id}"). A única diferença é que os atributos de dados devem começar com 'data-' e, então, podemos dar a eles qualquer nome que quisermos. Portanto, o propósito de um atributo de dados é que possamos anexar qualquer informação a um elemento (podemos anexar a imagem do produto ou o preço e assim por diante).
