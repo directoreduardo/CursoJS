@@ -1,6 +1,12 @@
 // 3. Precisamo descobrir como adicionar o/um produto ao cart (carrinho). Um cart é basicamente apenas uma lista. E dentro desta lista temos o produto que queremos comprar e a quantidade de numero ou a quantidade desse produto que queremos comprar.
 
-export let cart = []
+export let cart = [{
+  productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+  quantity: 2,
+}, {
+  productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+  quantity: 1
+}]
 
 export function addToCart(productId) {
   // [2] Para o produto de camiseta não ser repetido duas vezes e cada um deles tendo a quantidade (quantity) de 1 fixado. O que realmente queremos fazer é um produto de camiseta com quantidade 2 (e assim por diante), porque é assim que vamos exibi-lo na página de cart (orders.html). Faremos isso passo a passo. PRIMEIRO: verificar se o produto já está no cart (carrinho). SEGUNDO: se estiver, aumentaremos apenas a quantidade de um. TERCEIRO: se não estiver, iremos adicioná-lo no cart.
