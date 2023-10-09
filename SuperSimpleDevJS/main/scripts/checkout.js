@@ -2,7 +2,8 @@ import {cart} from '../data/cart.js'
 import {products} from '../data/products.js'
 
 
-
+// Para combinar todo o HTML juntos, vamos criar uma cariável aqui para armazenar o resultado
+let cartSummaryHTML = '' // e agora, cada vez que percorrermos (loop) o cart, adicionaremos o HTML (``) aqui para combiná-lo
 cart.forEach((cartItem) => {
   //Primeiro precisamos usar o projectId (localizado no cart.js) para pesquisar o produto e obter os demais detalhes como imagem, nome e preço (tudo isso via ID). Para isso, vamos primiro retirar o projectId do cartItem antes. Portanto, criaremos uma variável projectId.
   let productId = cartItem.productId // Agora precisamos usar isso para procurar o produto completo - que se localiza dentro do arquivo project.js. Para isso precisamos importar o array products dentro do arquivo products.js, como já foi feito na segunda linha. Portanto vamos criar uma variável para salvar o resultado.
@@ -14,77 +15,80 @@ cart.forEach((cartItem) => {
       matchingProduct = product
     }
   })
-  console.log(matchingProduct)
 
-  `
-  <div class="cart-item-container">
-    <div class="delivery-date">
-      Delivery date: Tuesday, June 21
-    </div>
-
-    <div class="cart-item-details-grid">
-      <img src="imagens/products/athletic-cotton-socks-6-pairs.jpg" class="product-image">
-      <div class="cart-item-details">
-        <div class="product-name">
-          Black and Gray Athletic Cotton Socks - 6 Pairs
-        </div>
-        <div class="product-price">
-          $10.90
-        </div>
-        <div class="product-quantity">
-          Quantity: <span class="quantity-label">2</span>
-
-          <input type="number" class="new-quantity-input" value="2" data-testid="new-quantity-input">
-
-          <span class="update-quantity-link link-primary">Update</span>
-
-          <span class="save-quantity-link link-primary" data-testid="save-quantity-link">Save</span>
-
-          <span class="delete-quantity-link link-primary">Delete</span>
-        </div>
+  // Abaixo, por exemplo, em vez de gerar sempre a mesma imagem, vamos usar a imagem no matchingProduct.
+  cartSummaryHTML += `
+    <div class="cart-item-container">
+      <div class="delivery-date">
+        Delivery date: Tuesday, June 21
       </div>
 
-      <div class="delivery-options">
-        <div class="delivery-options-title">
-          Choose a delivery option:
-        </div>
-        <div class="delivery-option">
-          <input type="radio" checked class="delivery-option-input">
-          <div>
-            <div class="delivery-option-date">
-              Tuesday, June 21
-            </div>
-            <div class="delivery-option-price">
-              FREE Shipping
-            </div>
+      <div class="cart-item-details-grid">
+        <img src="${matchingProduct.image}" class="product-image">
+        <div class="cart-item-details">
+          <div class="product-name">
+            ${matchingProduct.name}
+          </div>
+          <div class="product-price">
+            $${matchingProduct.priceCents / 100}
+          </div>
+          <div class="product-quantity">
+            Quantity: <span class="quantity-label">${cartItem.quantity}</span>
+
+            <input type="number" class="new-quantity-input" value="2" data-testid="new-quantity-input">
+
+            <span class="update-quantity-link link-primary">Update</span>
+
+            <span class="save-quantity-link link-primary" data-testid="save-quantity-link">Save</span>
+
+            <span class="delete-quantity-link link-primary">Delete</span>
           </div>
         </div>
 
-        <div class="delivery-option">
-          <input type="radio" class="delivery-option-input">
-          <div>
-            <div class="delivery-option-date">
-            Wednesday, June 15
-            </div>
-            <div class="delivery-option-price">
-              $4.99 - Shipping
+        <div class="delivery-options">
+          <div class="delivery-options-title">
+            Choose a delivery option:
+          </div>
+          <div class="delivery-option">
+            <input type="radio" checked class="delivery-option-input">
+            <div>
+              <div class="delivery-option-date">
+                Tuesday, June 21
+              </div>
+              <div class="delivery-option-price">
+                FREE Shipping
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="delivery-option">
-          <input type="radio" class="delivery-option-input">
-          <div>
-            <div class="delivery-option-date">
-              Monday, June 13
+          <div class="delivery-option">
+            <input type="radio" class="delivery-option-input">
+            <div>
+              <div class="delivery-option-date">
+              Wednesday, June 15
+              </div>
+              <div class="delivery-option-price">
+                $4.99 - Shipping
+              </div>
             </div>
-            <div class="delivery-option-price">
-              9.99 - Shipping
+          </div>
+
+          <div class="delivery-option">
+            <input type="radio" class="delivery-option-input">
+            <div>
+              <div class="delivery-option-date">
+                Monday, June 13
+              </div>
+              <div class="delivery-option-price">
+                9.99 - Shipping
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  `
+`
 })
+
+// Agora vamos usar o DOM e colocar o elemento 'order-summary' em nosso javascript
+document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML // e agora se salvarmos, estamos basicamente gerando todo esse HTML com javascript (acima) e depois colocando na página. Podendo agora remover os códigos 'cart-item-container' que se localizava no HTML e tudo ainda funcionará porque agora está sendo gerado por javascript
