@@ -1,6 +1,7 @@
 //A explicação para essas linhas abaixo está explicada no texto em asterisco no arquivo cart.js
 import {cart, addToCart} from '../data/cart.js'
 import {products} from '../data/products.js'
+import { formatCurrency } from './utils/money.js'
 
 //--------------
 
@@ -31,7 +32,7 @@ products.forEach((products) => {
           </div>
         </div>
 
-        <div class="product-price"> $${(products.priceCents / 100).toFixed(2)} </div>
+        <div class="product-price"> $${formatCurrency(products.priceCents)} </div>
 
         <div class="product-quantity-container">
           <select data-testid="quantity-selector" >
