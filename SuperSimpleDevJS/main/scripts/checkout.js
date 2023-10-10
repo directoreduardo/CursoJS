@@ -42,7 +42,7 @@ cart.forEach((cartItem) => {
 
             <span class="save-quantity-link link-primary" data-testid="save-quantity-link">Save</span>
 
-            <span class="delete-quantity-link link-primary js-delete-link">Delete</span>
+            <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">Delete</span>
           </div>
         </div>
 
@@ -93,3 +93,13 @@ cart.forEach((cartItem) => {
 
 // Agora vamos usar o DOM e colocar o elemento 'order-summary' em nosso javascript
 document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML // e agora se salvarmos, estamos basicamente gerando todo esse HTML com javascript (acima) e depois colocando na página. Podendo agora remover os códigos 'cart-item-container' que se localizava no HTML e tudo ainda funcionará porque agora está sendo gerado por javascript
+
+// Há algumas coisas que podemos tornar interativas. Agora, vamos começar co meste link de exclusão (delete-quantity-link). Ao clicar neste link, ele deverá remover este produto do cart. Primeiro vamos adicionar eventlistener a todos esses links de exclusão.
+document.querySelectorAll('.js-delete-link').forEach((link) => { // para cada um desses links, adicionaremos um eventlistener
+  link.addEventListener('click', /*aqui, daremos uma string e o evento que queremos ouvir, que é um clique*/ () => {
+    // Então, quando clicarmos em excluir, executaremos duas etapas. O PRIMEIRO passo é retirar o produto do cart. E o SEGUNDO passo é também atualizar nosso HTML e retirar o produto da página.
+    //PRIMEIRO: como sabemos qual produto precisamos retirar do cart? Assim como aprendemos como fazer para o botão do 'Add to Cart' adicionar ao cart, podemos anexar o ID do produto ao elemento do link. E, agora que anexamos o ID do produto a este elemento, podemos obtê-lo em nosso JS abaixo.
+    let productId = link.dataset.productId
+    console.log(productId)
+  })
+})
