@@ -19,7 +19,7 @@ cart.forEach((cartItem) => {
 
   // Abaixo, por exemplo, em vez de gerar sempre a mesma imagem, vamos usar a imagem no matchingProduct.
   cartSummaryHTML += `
-    <div class="cart-item-container">
+    <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
       <div class="delivery-date">
         Delivery date: Tuesday, June 21
       </div>
@@ -102,6 +102,9 @@ document.querySelectorAll('.js-delete-link').forEach((link) => { // para cada um
     let productId = link.dataset.productId
     // Agora temos o ID que precisamos remover do cart. Agora, como podemos realmente fazer isso? *Antes de começarmos a descobrir isso, em vez de escrever todo o código aqui, vamos criar uma função dentro do cart.js para realizar essa tarefa. A razão pela qual faremos isso é porque o cart.js deve conter todo o código relacionado ao cart. 
     removeFromCart(productId)
-    console.log(cart)
+    // A segunda coisa que temos que fazer quando clicarmos em deletar é atualizar nosso HTML. Primeiro, usar o DOM para obter o elemento que queremos remover. E então podemos usar um método chamado .remove() method. Cada elemento que obtemos do DOM possui um método chamado .remove, que o remove da página. Qual elemento que queremos remover da página? No caso, as duas divs com a classe 'cart-item-container'. Uma maneira de identificar para qual produto se destina é adicionar uma classe especial a esse elemento, e está classe conterá o productId (ID do produto). Quando clicamos em excluir, temos o productId aqui. Portanto, podemos usar isso para selecionar a classe especial que iremos adicionar, no caso, 'js-cart-item-container-{id}'. E aqui usaremos o DOM e também o productId para obter a classe espacial que adicionamos.
+    let container = document.querySelector(`.js-cart-item-container-${productId}`) //ao criar uma string assim, podemos selecionar o container específico que precisamos
+    // Agora que temos o elemento que queremos removewr, a próxima etapa é usar o método .remove. 
+    container.remove()
   })
 })
