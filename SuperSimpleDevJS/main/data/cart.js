@@ -1,12 +1,22 @@
 // 3. Precisamo descobrir como adicionar o/um produto ao cart (carrinho). Um cart é basicamente apenas uma lista. E dentro desta lista temos o produto que queremos comprar e a quantidade de numero ou a quantidade desse produto que queremos comprar.
 
-export let cart = [{
-  productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-  quantity: 2,
-}, {
-  productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
-  quantity: 1
-}]
+export let cart = JSON.parse(localStorage.getItem('cart')) // Aqui, precisamos pegar o cart do localStorage (vide [SAVE]) em vez de usar um valor padrão. getItem leva uma string e esse é o nome que salvamos no localStorage: que é cart. No entanto, localStorage só pode salvar string. Portanto, isso nos dará uma versão string do nosso cart e precisamos convertê-lo novamente em um array. Para convertê-lo, usamos o código JSON.parse() 
+
+// A ultima coisa que precisamos fazer é quando usarmos o site pela primeira vez, talvez não tenhamos o cart no localStorage. Portanto, se não tivermos um cart salvo, o localStorage nos dará nulo (null). Nesta situação, se esse valor for null, queremos dar ao cart um valor padrão, que é o valor abaixo.
+if (!cart) {
+  cart = [{
+    productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+    quantity: 2,
+  }, {
+    productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+    quantity: 1
+  }]
+}
+
+// [SAVE] Proxima coisa que faremos é adicionar localStorage (armazenamento local) em nosso cart, pois, se excluirmos alguns produtos do nosso cart e depois atualizarmos, o cart volta a ser o que era antes. Isso porque nosso cart é apenas uma variável e as variáveis são redefinidas quando atualizamos a página ou quando vamos para uma página diferente. Esse é problema de ser apenas uma variável para salvar nosso cart. Então, primeiro, vamos criar uma função para salvar o cart no localStorage, pois podemos querer reutilizar esse código
+function saveToStorage() {
+  localStorage.setItem('cart', JSON.stringify(cart)) //setItem leva duas strings, a primeira string é o nome de tudo o que queremos salvar (neste caso, o cart), e a segunda string são os dados que queremos salvar. Lembre-se que o localStorage só pode salvar string, portanto, para salvar nosso cart, precisamos primeiro convertê-lo em uma string (usando JSON.stringify())
+}
 
 export function addToCart(productId) {
   // [2] Para o produto de camiseta não ser repetido duas vezes e cada um deles tendo a quantidade (quantity) de 1 fixado. O que realmente queremos fazer é um produto de camiseta com quantidade 2 (e assim por diante), porque é assim que vamos exibi-lo na página de cart (orders.html). Faremos isso passo a passo. PRIMEIRO: verificar se o produto já está no cart (carrinho). SEGUNDO: se estiver, aumentaremos apenas a quantidade de um. TERCEIRO: se não estiver, iremos adicioná-lo no cart.
@@ -28,6 +38,8 @@ export function addToCart(productId) {
       quantity: 1
     })
   }
+   // [SAVE] Sempre que atualizamos o cart, precisamos salvar no localStorage para que não seja redefinido quando atualizarmos a página.
+   saveToStorage()
 }
 
 // Esta função pegará o productId que temos e removerá do cart
@@ -45,6 +57,9 @@ export function removeFromCart(productId) {
   }) 
   // Agora, o ultimo passo é pegar nosso newCart e recolocar o cart lá acima (export let cart = [{}]).
   cart = newCart 
+
+  // [SAVE] Sempre que atualizamos o cart, precisamos salvar no localStorage para que não seja redefinido quando atualizarmos a página.
+  saveToStorage()
 }
 
 
