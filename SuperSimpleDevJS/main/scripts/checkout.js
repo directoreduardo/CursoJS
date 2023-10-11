@@ -1,4 +1,4 @@
-import {cart} from '../data/cart.js'
+import {cart, removeFromCart} from '../data/cart.js'
 import {products} from '../data/products.js'
 import { formatCurrency } from './utils/money.js'
 
@@ -100,6 +100,8 @@ document.querySelectorAll('.js-delete-link').forEach((link) => { // para cada um
     // Então, quando clicarmos em excluir, executaremos duas etapas. O PRIMEIRO passo é retirar o produto do cart. E o SEGUNDO passo é também atualizar nosso HTML e retirar o produto da página.
     //PRIMEIRO: como sabemos qual produto precisamos retirar do cart? Assim como aprendemos como fazer para o botão do 'Add to Cart' adicionar ao cart, podemos anexar o ID do produto ao elemento do link. E, agora que anexamos o ID do produto a este elemento, podemos obtê-lo em nosso JS abaixo.
     let productId = link.dataset.productId
-    console.log(productId)
+    // Agora temos o ID que precisamos remover do cart. Agora, como podemos realmente fazer isso? *Antes de começarmos a descobrir isso, em vez de escrever todo o código aqui, vamos criar uma função dentro do cart.js para realizar essa tarefa. A razão pela qual faremos isso é porque o cart.js deve conter todo o código relacionado ao cart. 
+    removeFromCart(productId)
+    console.log(cart)
   })
 })

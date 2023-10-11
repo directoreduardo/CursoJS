@@ -30,6 +30,24 @@ export function addToCart(productId) {
   }
 }
 
+// Esta função pegará o productId que temos e removerá do cart
+export function removeFromCart(productId) {
+  // Maneiras que podemos fazer isso. Primeiro podemos criar um novo array e, em seguida, podemos percorrer (loop) nosso cart e adicionar cada produto ao novo array, exceto este productId.
+  //PRIMEIRO: vamos criar um novo array.
+  let newCart = []
+  //SEGUNDO: percorrer (loop) nosso cart.
+  cart.forEach((cartItem) => {
+    //TERCEIRO: adicionar cada cartItem ao novo array, exceto se ele tiver esse productId.
+    if (cartItem.productId !== productId) {
+      // Se não for igual ao productId que estamos tentando retirar, vamos adicioná-lo ao novo cart.
+      newCart.push(cartItem) //portanto o resultado desse loop é que ele conterá todos os cartItem que não correspondem a esse productId (acima). E isso é a mesma coisa que remover esse (productId) do cart.
+    }
+  }) 
+  // Agora, o ultimo passo é pegar nosso newCart e recolocar o cart lá acima (export let cart = [{}]).
+  cart = newCart 
+}
+
+
 //-------------------------------------------
 // Explicação do 'export' + o type="module" + o import::
 //*******************************************
