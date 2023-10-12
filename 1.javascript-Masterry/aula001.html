@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Roll your mouse over the box</h1>
+  <div></div>
+
+  <script>
+    let heading = document.querySelector('h1')
+    let box = document.querySelector('div')
+
+    box.addEventListener('mouseover', () => {
+      heading.innerHTML = 'Mouse is over the box'
+    })
+    box.addEventListener('mouseout', () => {
+      heading.innerHTML = 'Mouse has left the box'
+    })
+    heading.addEventListener('mouseover', () => {
+      heading.innerHTML = 'Roll your mouse over the box'
+    })
+  </script>
+</body>
+</html>
