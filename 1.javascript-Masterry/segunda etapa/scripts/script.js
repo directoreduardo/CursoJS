@@ -20,4 +20,8 @@ function previousPhoto() {
 }
 document.querySelector('.previous').onclick = previousPhoto */
 
-//UTILIZANDO O EVENT
+//---UTILIZANDO O EVENTLISTENER + 
+
+let container = document.querySelector('.content')
+let nextBtn = document.querySelector('.next')
+let prevBtn = document.querySelector('.previous')
