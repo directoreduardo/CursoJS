@@ -45,8 +45,8 @@ body {
   color: white;
 }
 /*--------Animation Styles-----------*/
-.fadeining {
-  animation: fadein 2s;
+.fadeinimg {
+  animation: fadein 1s;
 }
 @keyframes fadein {
   from {
