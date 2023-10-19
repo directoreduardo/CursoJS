@@ -1,0 +1,30 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 130%;
+}
+.invisible {
+  color: #aabccc;
+}
+.container {
+  width: 700px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+.top {
+  background-color: #ebf6be;
+}
+.bottom {
+  background-color: rgba(128, 128, 128, 0.98);
+}
+.answer-outro {
+  color: rgb(255, 0, 0);
+  text-shadow: 1px 0 10px rgba(0, 0, 0, 0.902);
+}
