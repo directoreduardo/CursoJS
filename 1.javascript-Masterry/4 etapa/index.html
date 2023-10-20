@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocaction Destination List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Vocation Destinations Wish List</h1>
+    <p>Found exciting places to visit on your next vocation? Use the form below to add them to your wish list</p>
+  </header>
+  
+  <main>
+    <form class="destination_details_form">
+      <label for="name">Destination Name</label>
+      <input type="text" class="name" placeholder="Provide a name for the destination" required>
+
+      <label for="location">Destination Location</label>
+      <input type="text" class="location" placeholder="Where is this destination located" required>
+
+      <label for="photo">Photo</label>
+      <input type="url" class="photo" placeholder="Provide a URL for a photo">
+
+      <label for="description">Destination Description</label>
+      <textarea class="description" placeholder="Describe the destination"></textarea>
+
+      <button type="submit">Add to List</button>
+    </form>
+
+    <article>
+      <h2 class="title">Enter Destination Details</h2>
+      <div class="destinations_container">
+        <!--Conteudo gerado pelo JS-->
+        <div class="card">
+          <img src="photo.webp"> <!--foto generica usada só como exemplo-->
+          <div class="card-body">
+            <h3>Destination Name</h3>
+            <h4>Destination Location</h4>
+            <p class="cart-text">Destination Description</p>
+            <button>Remove</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
