@@ -7,13 +7,13 @@ function handleFormSubmit(event) {
 
   // 1. extrair o valor de cada campo do formulário 
   let destName = event.target.elements['name'].value
-  let destLocation = event.target.alements['location'].value
+  let destLocation = event.target.elements['location'].value
   let destPhoto = event.target.elements['photo'].value
   let destDesc = event.target.elements['description'].value
 
   // 2. limpar o campo do formulário
   for (let i = 0; i < detailsForm.length; i++) {
-    detailsForm.element[i].value = ''
+    detailsForm.elements[i].value = ''
   }
 
   // 3. executar uma função que cria um novo card
@@ -27,7 +27,7 @@ function handleFormSubmit(event) {
   }
 
   // 5. adicionar o card
-  document.querySelector('.destinations_container'). appendChild(destCard)
+  document.querySelector('.destinations_container').appendChild(destCard)
 }
 
 // O conteudo gerado pelo JS descrito no HTML
