@@ -1,0 +1,45 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<div id="page">
+    <header>
+      <h1>Title of the page</h1>
+      <h2>Subtitle of the page</h2>
+    </header>
+    <nav id="sidebar">
+      <ul>
+        <li class="special">
+          <a href="#">Link One</a>
+          <ul class="submenu">
+            <li><a href="#">Sub Link one</a></li>
+            <li><a href="#">Sub Link two</a></li>
+            <li><a href="#">Sub Link three</a></li>
+            <li><a href="#">Sub Link four</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Link Two</a></li>
+        <li><a href="#">Link Three</a></li>
+        <li><a href="#">Link Four</a></li>
+      </ul>
+    </nav>
+    <section id="main">
+      <h2>Section Title One</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto quasi dicta enim nisi porro voluptatibus veritatis alias inventore suscipit! Dolor, fugiat. Commodi, atque nesciunt. Reprehenderit doloremque laboriosam facilis consequatur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi doloribus maxime sint modi atque eos.</p>
+      <h2>Section Title Two</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iusto quasi dicta enim nisi porro voluptatibus veritatis alias inventore suscipit! Dolor, fugiat. Commodi, atque nesciunt. Reprehenderit doloremque laboriosam facilis consequatur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi doloribus maxime sint modi atque eos.
+        <ol>
+          <li>Item numver one</li>
+          <li class="special">Item numver two</li>
+          <li class="special">Item number three</li>
+          <li>Item number four</li>
+        </ol>
+      </p>
+    </section>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    //$('li').first().css('border', '2px solid red')
+    //$('li').even().css('border', '2px solid red')
+    $('a').click(() => {
+      console.log($(this).html())
+    })
+  </script>
