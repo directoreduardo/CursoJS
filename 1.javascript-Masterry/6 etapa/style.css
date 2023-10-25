@@ -1,0 +1,38 @@
+body {
+  background-color: #efefef;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  line-height: 1.4em;
+}
+main {
+  width: 800px;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+aside {
+  width: 250px;
+}
+article {
+  width: 525px;
+}
+h1 {
+  height: 150px;
+  background: url("http://placekitten.com/525/150") no-repeat;
+  line-height: 150px;
+  text-align: center;
+  color: white;
+}
+ul {
+  list-style-type: none;
+}
+
+/*CLASSES NÃO VISIVEIS NO HTML. CLASSES PARA O JS*/
+.hide-menu {
+  display: none;
+}
+.show-menu {
+  display: block;
+}
