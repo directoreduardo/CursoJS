@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {padding-top: 100px;}
+    nav {margin-bottom: 50px;}
+    nav ul {overflow: hidden; border-left: 1px solid #777676; margin: 0; padding: 0; list-style-type: none;}
+    nav ul li {float: left;}
+    nav ul li a {
+      display: block;
+      width: 149px;
+      text-align: center;
+      background: #bebcbc;
+      color: #333;
+      border-right: 1px solid #777676;
+      height: 50px;
+      line-height: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    nav ul li a:hover {background: #d5d4d4;}
+    #box {
+      width: 260px; 
+      height: 260px; 
+      background-color: #4c90d8; 
+      padding: 20px; 
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#" id="growbox">grow box</a></li>
+      <li><a href="#" id="growtext">grow text</a></li>
+      <li><a href="#" id="movebox">move box</a></li>
+      <li><a href="#" id="doall">do all</a></li>
+      <li><a href="#" id="sequence">sequence</a></li>
+    </ul>
+  </nav>
+  <div id="box">Chickens and Llamas!</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    //MÉTODO DE ANIMAÇÃO CUSTOMIZADA--- 
+
+    //PRIMEIRA ETAPA: CRESCER A BOX
+    $('#growbox').click(function() {
+      $('#box').animate({width: '710px'})
+    })
+
+    //SEGUNDA ETAPA: CRESCER O TEXTO
+    $('#growtext').click(function() {
+      //obs: usa-se o font zine do javascript (fontSize), não do CSS (font-size)
+      $('#box').animate({fontSize: '29px'}, 1000)
+    })
+
+    //TERCEIRA ETAPA: MOVER A BOX
+    //obs: para mover a box, é preciso antes deixá-lo em 'position: absolute;'
+    $('#movebox').click(function() {
+      $('#box').animate({left: '+=225px'}, 1500)
+    })
+
+    //QUARTA ETAPA: FAZER TUDO
+    $('#doall').click(function() {
+      $('#box').animate({width: '500px', fontSize: '50px', left: '+=225px'}, 1500)
+    })
+
+    //QUINTA ETAPA: SEQUENCIA 
+    $('#sequence').click(function() {
+      $('#box').animate({width: '480px'}, function() {
+        $('#box').animate({fontSize: '29px'}, 1000, function() {
+          $('#box').animate({left: '+=225px'}, 1500)
+        })
+      })
+    })
+  </script>
+</body>
+</html>

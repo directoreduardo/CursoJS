@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {padding: 10px; padding-top: 100px;}
+    nav {margin-bottom: 50px;}
+    nav ul {overflow: hidden; border-left: 1px solid #777676; margin: 0; padding: 0; list-style-type: none;}
+    nav ul li {float: left;}
+    nav ul li a {
+      display: block;
+      width: 149px;
+      text-align: center;
+      background: #bebcbc;
+      color: #333;
+      border-right: 1px solid #777676;
+      height: 50px;
+      line-height: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    nav ul li a:hover {background: #d5d4d4;}
+    #box {width: 600px; height: 300px; background-color: #4c90d8;}
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#" id="fadeoutbox">fade out</a></li>
+      <li><a href="#" id="fadeinbox">fade in</a></li>
+      <li><a href="#" id="fadeto20box">fade to 20%</a></li>
+      <li><a href="#" id="fadeto100box">fade to 100%</a></li>
+    </ul>
+  </nav>
+  <div id="box"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    //PRIMEIRA ETAPA: FADE OUT
+    $('#fadeoutbox').click(function() {
+      $('#box').fadeOut('normal')
+    })
+
+    //SEGUNDA ETAPA: FADE IN
+    $('#fadeinbox').click(function() {
+      $('#box').fadeIn('fast')
+    })
+
+    //TERCEIRA ETAPA: FADE TO 20%
+    $('#fadeto20box').click(function() {
+      $('#box').fadeTo(1000, 0.2)
+    })
+
+    //QUARTA ETAPA: FADE TO 100%
+    $('#fadeto100box').click(function() {
+      $('#box').fadeTo(1000, 1)
+    })
+  </script>
+</body>
+</html>
