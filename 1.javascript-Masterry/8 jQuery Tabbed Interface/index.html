@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Interface... (with jQuery)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Cupcakes</a></li>
+      <li><a href="#tabs-2">Brownies</a></li>
+      <li><a href="#tabs-3">Cotton Candy</a></li>
+    </ul>
+    <div id="tabs-1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime cupiditate unde officiis beatae iste quidem dolores odio repellat consequatur itaque animi quos nesciunt, nihil sunt, aperiam provident nulla aspernatur voluptatem?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, reprehenderit necessitatibus ullam ipsa iste placeat harum dolor ex accusamus unde culpa beatae. Nisi nemo ipsa minus in! Nesciunt, aliquid quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione, fuga explicabo sunt iusto aperiam vel sequi error dolores reiciendis? Eum corporis itaque voluptatibus dolorum dolorem maxime fugiat consequuntur molestiae.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore molestiae dolores veritatis dignissimos eveniet ratione cumque, quo vero nulla exercitationem esse. Itaque nihil accusantium fugiat molestiae nam quos blanditiis quidem?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim porro asperiores autem dolor ab blanditiis temporibus, omnis cupiditate repellat atque illum voluptate recusandae voluptatum amet quod aliquam magnam qui inventore?</p>
+    </div>
+    <div id="tabs-2">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusantium est ducimus asperiores omnis accusamus excepturi? Nemo est similique dolorum iure ex earum ducimus, rerum, quidem aspernatur laboriosam animi perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolorem, magni delectus suscipit repellendus velit ducimus possimus fuga recusandae sequi deserunt minima repellat laudantium eius quam maxime sapiente quidem repudiandae? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis illum atque dolore ullam sequi culpa dolorum! Doloremque iure amet quidem molestiae harum sed odio saepe obcaecati, dolorem, minus et.</p> <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint non veniam, veritatis error amet sequi placeat numquam neque suscipit quam ea ratione alias, libero culpa. Esse itaque quod ratione reprehenderit!Lorem</p>
+    </div>
+    <div id="tabs-3">
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti porro non ut doloribus quia unde at veniam nostrum blanditiis, quae iure sed fugiat consequuntur pariatur. Necessitatibus illum quidem nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium assumenda cumque laboriosam nostrum accusamus consequuntur dolore tempora et placeat voluptas praesentium, officia tempore blanditiis error ullam dolor nemo veritatis explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis harum expedita maiores quia culpa ullam quo sunt? Illum, vel natus nulla, exercitationem quaerat harum porro sit, odit impedit aspernatur adipisci.</p> <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae nam obcaecati error vel accusamus magnam ea ab eos explicabo libero tempora dignissimos est assumenda sint, eius voluptatum, eveniet beatae? Maiores? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, tempore vitae molestiae repellendus enim officiis, perspiciatis minima incidunt sint, magni quod iste eius. Nemo, eum aliquid voluptates et eos perspiciatis?</p>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $('#tabs>ul>li>a').click(function() {
+      //ao clicar, todo o background dos ul voltam ao padrão normal:
+      $('#tabs>ul>li>a').css({background: '#a2a2a2', color: '#cecece'}) 
+      
+      //agora precisamos mudar o background do ul na qual clicamos:
+      $(this).css({background: '#eaeaea', color: '#333'})
+
+      //agora, ao clicar, concetar os links (ul) aos id das divs
+      const thisTab = $(this).attr('href') //attr é um método de atributo do jQuery
+
+      //usaremos o fade-out (+ fade-in) para a transição
+      $('#tabs>div:visible').fadeOut(200, function() {
+        $(thisTab).fadeIn(250)
+      })
+    })
+  </script>
+</body>
+</html>
