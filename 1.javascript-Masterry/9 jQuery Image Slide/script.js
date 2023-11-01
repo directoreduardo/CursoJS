@@ -14,4 +14,16 @@ $(window).on('load', function() {
   let counter = 0 // o counter nos ajudará a controlar em qual slide estamos
 
   $('#slider ul').css('width', totalWidth)
+
+  //ADICIONAR MANUPULADOR DE CLIQUES (CLICK HANDLER) PARA "PRÓXIMO" BOTÃO ("NEXT" BUTTON)
+  //adicionar click hanlder para "próximo link" e, dentro, adicione o counter
+  $('#next').click(function() {
+    counter++
+
+    //em seguida, defina o leftPosition para um número negativo e termine com "px"
+    leftPosition = `-${counter * imageWidth}px` //- quando o link é clicado pela primeira vez, o leftPosition se tornará -400px, que deslizará (slides) toda a faixa de imagens para a esquerda 400px, colocando a segunda imagem na janela
+
+    //ANIMAR O SLIDE TRIP
+    $('#slider ul').animate({left: leftPosition}, 700) //obs: no código original, no final (de 700, ...) terminária com (... 'easeInQuat'), porém como deu erro no meu código, eu apaguei e deixei como está, agora funcionou
+  })
 })
