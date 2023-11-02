@@ -27,5 +27,22 @@ body {
 #links {
   width: 420px;
   display: flex;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 2px;
+}
+#links a {
+  display: block;
+  flex: 1;
+  background-color: #6c0204;
+  height: 50px;
+  line-height: 50px;
+  color: #d5d5d5;
+  text-decoration: none;
+  font-family: arial;
+  text-transform: uppercase;
+  text-align: center;
+}
+#links a:hover {
+  background-color: #a51d1f;
+  color: white;
 }

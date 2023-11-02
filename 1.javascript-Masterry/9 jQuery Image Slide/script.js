@@ -15,15 +15,38 @@ $(window).on('load', function() {
 
   $('#slider ul').css('width', totalWidth)
 
+  //------------------------
   //ADICIONAR MANUPULADOR DE CLIQUES (CLICK HANDLER) PARA "PRÓXIMO" BOTÃO ("NEXT" BUTTON)
   //adicionar click hanlder para "próximo link" e, dentro, adicione o counter
   $('#next').click(function() {
     counter++
+
+    //--MANIPULADOR DE PRÓXIMO CLIQUE COM INSTRUÇÃO 'IF'
+    //Para que, ao clicar nas 6 fotos, retorne para a foto 1
+    if (counter === imageCount) {
+      counter = 0
+    }
 
     //em seguida, defina o leftPosition para um número negativo e termine com "px"
     leftPosition = `-${counter * imageWidth}px` //- quando o link é clicado pela primeira vez, o leftPosition se tornará -400px, que deslizará (slides) toda a faixa de imagens para a esquerda 400px, colocando a segunda imagem na janela
 
     //ANIMAR O SLIDE TRIP
     $('#slider ul').animate({left: leftPosition}, 700) //obs: no código original, no final (de 700, ...) terminária com (... 'easeInQuat'), porém como deu erro no meu código, eu apaguei e deixei como está, agora funcionou
+  })
+
+  //------------------------
+  //ADICIONAR MANUPULADOR DE CLIQUES (CLICK HANDLER) PARA O BOTÃO "ANTERIOR" ("PREVIOUS" BUTTON)
+  //praticamente igual ao #next acima, só que com umas pequenas mudanças a mais
+  $("#previous").click(function() {
+    counter--
+
+    //se eu voltar (previous button) a primeira imagem (foto 1), ela imediatamente desliza (slider) para a ultima (foto 5)
+    if (counter < 0) {
+      counter = imageCount-1
+    }
+
+    leftPosition = `-${counter * imageWidth}px`
+
+    $("#slider ul").animate({left: leftPosition}, 700)
   })
 })
