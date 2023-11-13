@@ -1,0 +1,92 @@
+body {
+  padding-top: 50px;
+  font-family: arial;
+  color: #333;
+}
+#slider-wrapper {
+  /*background-color: aqua;  // para situar visualmente o elemento em questão */
+  width: 1000px;
+  height: 358px;  /* 358px - sem a fonte arial */
+  margin: auto;
+  position: relative;
+  overflow: hidden; /*overflow: hidden - é adicionado para que não veja os slider que está fora do elemento*/
+}
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#slider-wrapper ul {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left 700ms cubic-bezier(0.165, 0.84, 0.44, 1); /* voce pode experimentar diferentes opções de flexibilização obtendo o código do site do ceaser (https://matthewlein.com/tools/ceaser) */
+}
+#slider-wrapper ul li {
+  /* Background cover existe para tirar o background image, que está nas demais regras. */
+  background-size: cover;
+
+  /* Position: relativo é definido para que o conteúdo do texto dentro do slide possa ser posicionado. */
+  position: relative;
+
+  /* cada slide tem 1000 px de largura e flutua para a esquerda, de modo que todos se alinham horizontalmente em uma longa faixa. Cada um tem largura e altura. */
+  width: 1000px;
+  height: 300px;
+  float: left;
+}
+
+#slider-wrapper ul li:nth-child(1) {
+  background-image: url(images/blue.jpg);
+  color: aqua;
+}
+#slider-wrapper ul li:nth-child(2) {
+  background-image: url(images/gray.jpeg);
+  color: black;
+  text-shadow: 1px 0 2px #3333336c;
+}
+#slider-wrapper ul li:nth-child(3) {
+  background-image: url(images/green.jpg);
+  text-shadow: 0 0 3px rgba(0, 128, 0, 0.512);
+}
+#slider-wrapper ul li:nth-child(4) {
+  background-image: url(images/orange.jpg);
+  color: rgb(119, 77, 0);
+  text-shadow: 0 0 1px rgb(0, 0, 0);
+}
+#slider-wrapper ul li:nth-child(5) {
+  background-image: url(images/yellow.jpg);
+  text-shadow: 0 0 1px black;
+}
+.content {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.194);
+}
+#slider-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: #333;
+  justify-content: space-between;
+}
+#slider-controls a {
+  color: white;
+  display: block;
+  padding: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  background-color: #5b5b5b;
+}
+
+#slider-controls a:active {
+  background-color: #666;
+}
