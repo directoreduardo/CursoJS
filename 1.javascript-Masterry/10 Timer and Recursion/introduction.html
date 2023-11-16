@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Timers and Recursion</title>
+</head>
+<body>
+  <p><a href="#" id="stop">Stop the script</a></p>
+  <div id="thediv">Default Content</div>
+
+  <script>
+    const theDiv = document.querySelector('#thediv')
+    const content = '<p>adding another paragraph</p>'
+
+    const timer = setInterval(function() {
+      theDiv.innerHTML += content
+    }, 1500)
+
+    document.querySelector('#stop').addEventListener('click', function() {
+      clearInterval(timer)
+    })
+  </script><!-- Ao carregar a página, a cada 1 segundo e meio a string de 'content' irá reproduzir. Ao clicar no 'Stop the script' a reprodução acaba -->
+
+  <!-- Existe duas funções de timer no JS. setInterval() e setTimeout()
+  
+  setTimeout(função-que-correrá, quantidade de tempo)
+  setInterval(função-que-correrá, quantidade de tempo)
+
+  EXEMPLOS:
+  setTimeout(wakeUp, 8 hours)
+  setInterval(eatMeal, 4 hours)
+
+  Aqui, setTimeout será usado como alarme e só ativará uma vez, enquanto o setInterval irá ativar a cada quatro horas
+  -->
+</body>
+</html>
