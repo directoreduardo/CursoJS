@@ -8,3 +8,6 @@ https://cdnjs.com/libraries/jquery-easing [PARA CONSEGUIR O LINK]
 https://gsgd.co.uk/sandbox/jquery/easing/ [PARA CONSEGUIR OS CÓDIGOS]
 
 //-------------------
+
+//ENTRAR NO SITE:
+https://woo.com/pt-br/flexslider/

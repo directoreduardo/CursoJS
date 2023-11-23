@@ -13,7 +13,7 @@ a {text-decoration: none;}
 /* End CSS RESET */
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gentium Basic';
   color: #333;
 }
 
@@ -27,4 +27,63 @@ header h1 {
   margin-bottom: 0;
   background: #e8e8e8;
   padding: 50px 20px;
+}
+
+main {
+  margin-top: 60px;
+  padding: 0 10px;
+}
+
+section {
+  padding: 20px 10px;
+}
+
+.column, .double {
+  padding: 0 10px;
+}
+
+footer {
+  margin: 0 20px;
+  padding: 40px;
+  background: #e8e8e8;
+}
+
+/* *******TYPOGRAPHY******* */
+
+h1, h2 {
+  font-family: 'Oswald';
+  font-size: 24px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+
+footer p {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* **********MEDIA QUERIES********** */
+
+@media only screen and (min-width: 600px) {
+  main {
+    display: flex;
+  }
+  .column {
+    flex: 1;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #page {
+    max-width: 1000px;
+    margin: auto;
+  }
+  header h1 {
+    font-size: 120px;
+  }
 }
