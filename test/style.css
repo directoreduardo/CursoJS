@@ -1,6 +1,6 @@
 .all {
+  font-family: Georgia;
   font-size: 50px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
 }
 .um {
@@ -31,7 +31,7 @@
 /*-----------------------------*/
 .c {
   font-size: 15px;
-  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Gentium Basic';
 }
 /*-----------------------------*/
 .se-all, .ci-all, .qu-all, .tr-all, .do-all, .um-all {
