@@ -87,3 +87,41 @@ footer p {
     font-size: 120px;
   }
 }
+
+/* *********FLEXSLIDER RULES********* */
+/* Adicione essas duas regras antes das regras de media query na parte inferior do stylesheet.
+Você pode ajustar as regras no arquivo flexslider.css, mas se atualizar esse script com novos arquivos, perderá essas alterações.
+É melhor garantir que sua stylesheet seja carregada por último e substitua os estilos quando necessário. */
+
+.flexslider {
+  margin: 0 20px;
+  border: none;
+  border-radius: 0;
+}
+
+.flex-control-paging li a.flex-active {
+  background: #b40205;
+}
+
+/* Alterações fancy */
+.slide1 {background: url(imagens/kitten01.jpg) top left no-repeat;}
+.slide2 {background: url(imagens/kitten02.jpg) top left no-repeat;}
+.slide3 {background: url(imagens/kitten03.jpg) top left no-repeat;}
+.slide4 {background: url(imagens/kitten04.jpg) top left no-repeat;}
+.slide5 {background: url(imagens/kitten05.jpg) top left no-repeat;}
+.slide6 {background: url(imagens/kitten06.jpg) top left no-repeat;}
+.slide7 {background: url(imagens/kitten07.jpg) top left no-repeat;}
+
+.slides li div {
+  width: 100%;
+  position: relative;
+  padding-bottom: 50%;
+  background-size: cover;
+}
+
+.slides li div h2 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #b40205
+}
