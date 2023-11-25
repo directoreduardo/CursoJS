@@ -1,0 +1,107 @@
+body {
+  font-family: arial;
+  color: #333;
+  padding-top: 200px; 
+}
+header {
+  background: rgba(217, 217, 217, 0.9);
+  width: 100%;
+  position: fixed; 
+  top: 0;
+  height: 160px;
+}
+header h1 {
+  text-align: center;
+}
+p {
+  line-height: 1.5em;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+section {
+  width: 95%;
+  margin: 0 auto 150px auto;
+  padding: 25px;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.75);
+}
+
+/********** Navigation Styles **********/
+header nav {
+  width: 95%;
+  margin: auto;
+}
+header ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header li {
+  width: 20%;
+  box-sizing: border-box;
+  border-left: 2px solid#666;
+} 
+header li:first-of-type {
+  border-left: none;
+}
+header a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  background: #9c9c9c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+.selected {
+  background-color: rgba(254, 0, 187, 1.00);
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 700px) {
+  /* FIRST SECTION STYLE */
+  #first article {
+    display: flex;
+    align-items: flex-start;
+  }
+  #first article img {
+    margin-left: 25px;
+  }
+
+  /* SECOND SECTION STYLE */
+  #second div, #fifth div {
+    display: flex;
+    justify-content: space-between;
+  }
+  #second article {
+    width: 30%;
+  }
+
+  /* THIRD SECTION STYLE */
+  #third article {
+    display: flex;
+    align-items: flex-start;
+  }
+  #third article img {
+    margin-right: 25px;
+  }
+
+  /* FIFTH SECTION STYLE */
+  #fifth article {
+    width: 47%;
+  }
+  #fifth {
+    margin-bottom: 500px;
+  } 
+}
+@media only screen and (min-width: 1000px) {
+  section, header nav {
+    width: 900px
+  }
+}
