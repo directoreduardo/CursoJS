@@ -15,10 +15,29 @@ $(window).on('load', function() {
   const posts = $('section')
   let pageTop
   let postPos
+  let counter = 0
 
-  $(window).scroll(function() {
-    postPos = $(posts[0]).offset().top
+  
+  let postTops = []
+  posts.each(function() {
+    postTops.push(Math.floor($(this).offset().top))
+  })
+  console.log(postTops) //resumindo, a sessão 1 é 207, a sessão 2 é 974, a sessão 3 é 2358, a sessão 4 é 2953, a sessão 5 é 3409
+
+   $(window).scroll(function() {
+    /* postPos = $(posts[0]).offset().top
     pageTop = $(window).scrollTop()
-    console.log(`${pageTop} and ${postPos}`)
+    console.log(`${pageTop} and ${postPos}`)  */
+
+    pageTop = $(window).scrollTop() + 210
+    if(pageTop > postTops[counter+1]) /*scrollar pra baixo até a próxima sessão*/{
+      //incrementar o contador (counter)
+      counter++
+      console.log(`scrolling down ${counter}`)
+    } else if(counter > 0 && pageTop < postTops[counter]) /*scrollar pra cima até a sessão anterior*/{
+      //decrementar o contador (counter)
+      counter--
+      console.log(`scrolling up ${counter}`)
+    }
   })
 })
