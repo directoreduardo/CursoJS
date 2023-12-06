@@ -16,9 +16,8 @@ $("nav ul li a").click(function() {
 //--Próxima etapa: fazer que o scroll modifique as sessoões com o .selected
 $(window).on('load', function() {
   const allLinks = $("nav ul li a")
-  const posts = $('section')
+  let posts = $('section')
   let pageTop
-  let postPos
   let counter = 0
   let prevCounter = 0
   let doneResize
