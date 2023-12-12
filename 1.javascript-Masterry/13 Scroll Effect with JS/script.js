@@ -53,7 +53,7 @@ window.addEventListener('load', function() {
   })
 
   
-  //**NÃO SEI A ATÉ QUE PONTO ESSA PARTE DO CÓDIGO É UTIL OU QUE REALMENTE FUNCIONOU****
+  //**NÃO SEI A ATÉ QUE PONTO ESSA PARTE DO CÓDIGO É UTIL OU QUE REALMENTE FUNCIONOU (ASSIM COMO NO CÓDIGO EM jQUERY)****
   this.window.addEventListener('resize', function() {
     clearTimeout(doneResize)
     doneResize = setTimeout(function() {
