@@ -28,5 +28,55 @@ window.addEventListener('load', function() {
   posts.forEach(function(post) {
     postTops.push(Math.floor(post.getBoundingClientRect().top + window.pageYOffset))
   })
-  console.log(postTops) //resumindo, a sessão 1 é 207, a sessão 2 é 974, a sessão 3 é 2358, a sessão 4 é 2953, a sessão 5 é 3409
+  console.log(postTops) //resumindo, a sessão 1 é 208, a sessão 2 é 974, a sessão 3 é 2358, a sessão 4 é 2953, a sessão 5 é 3409
+
+  window.addEventListener('scroll', function() {
+    pagetop = window.pageYOffset + 250
+    /* console.log(pagetop) */
+
+    if(pagetop > postTops[counter]) {
+      counter++
+      console.log(`scrolling down ${counter}`)
+    } else if(counter > 1 && pagetop < postTops[counter-1]) {
+      counter--
+      console.log(`scrolling up ${counter}`)
+    }
+
+    if(counter != prevCounter) {
+      navLinks.forEach(function(eachLink) {
+        eachLink.removeAttribute('class')
+      })
+      const thisLink = document.querySelector(`nav ul li:nth-child(${counter}) a`)
+      thisLink.className = 'selected'
+      prevCounter = counter
+    }
+  })
+
+  
+  //**NÃO SEI A ATÉ QUE PONTO ESSA PARTE DO CÓDIGO É UTIL OU QUE REALMENTE FUNCIONOU****
+  this.window.addEventListener('resize', function() {
+    clearTimeout(doneResize)
+    doneResize = setTimeout(function() {
+      console.log('done resizing!') //basicamente, assim que eu parar de redimencionar a tela (responsividade), irá logar como 'done resizing!'
+      resetPagePosition()
+    }, 500)
+  })
+  function resetPagePosition() {
+    postTops = []
+    posts.forEach(function(post) {
+      postTops.push(Math.floor(post.getBoundingClientRect().top + window.pageYOffset))
+    })
+    const pagePosition = window.pageYOffset + 250
+    counter = 0
+    postTops.forEach(function(post) {
+      if(pagePosition > post) {
+        counter++
+      }
+    })
+    navLinks.forEach(function(eachLink) {
+      eachLink.removeAttribute('class')
+    })
+    const thisLink = document.querySelector(`nav ul li:nth-child(${counter}) a`)
+    thisLink.className = 'selected'
+  }
 })
