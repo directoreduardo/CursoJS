@@ -1,0 +1,68 @@
+/********** BASIC RESETS **********/
+h1, h2, h3, h4, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+nav ul, nav ol {
+  list-style-type: none;
+}
+* {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%; /* cria uma leve resposividade nas images */
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --rich-black: #061923;
+  --firey-rose: #ff5964;
+  --alice-blue: #ebf8ff;
+  --jasmine: #ffe099;
+  --tea-green: #c8d6af;
+  --tea-green-light: #f7ffea;
+  --english-violet: #48284a;
+}
+
+/********** BASIC TYPOGRAPHY *********/
+body {
+  font-family: 'IBM Plex Sans Condensed';
+  color: var(--rich-black);
+  padding-top: 100px;
+}
+h1, h2, h3, h4 {
+  font-family: 'Quicksand';
+  font-weight: 600;
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: .5em;
+  color: var(--firey-rose);
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: .5em;
+}
+h4 {
+  margin-bottom: .5em;
+}
+p {
+  margin-bottom: 1em;
+  line-height: 1.4em;
+}
+button {
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  line-height: 30px;
+  background-color: var(--tea-green);
+  color: var(--rich-black);
+  font-weight: 600px;
+  padding: 0 20px;
+  display: block;
+  margin: auto;
+}
+
+/*********** BASIC PAGE SECTIONS *********/
