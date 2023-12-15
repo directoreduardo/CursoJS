@@ -66,3 +66,178 @@ button {
 }
 
 /*********** BASIC PAGE SECTIONS *********/
+#page {
+  max-width: 1500px;
+  margin: auto;
+}
+section, footer {
+  padding: 20px;
+  margin-bottom: 150px;
+}
+section section {
+  margin: 0;
+  padding: 0;
+}
+
+/********* HEADER STYLES *********/
+header {
+  height: 107px;
+  padding: 10px 0;
+  /* background-color:  rgba(255, 224, 153, 0.75); */
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.logo {
+  position: relative;
+  margin: auto;
+  width: 140px;
+  margin-bottom: 10px;
+}
+.logo:hover {
+  cursor: pointer;
+}
+.logo h1 {
+  font-size: 24px;
+  color: var(--firey-rose);
+  position: absolute;
+  top: 10px;
+  left: 42px;
+}
+.logo img {
+  width: 50px;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+}
+header nav ul li a {
+  color: var(--alice-blue);
+  display: block;
+  font-family: 'Quicksand';
+  font-weight: 600;
+  padding: 0 5px;
+}
+
+/********** SLIDER STYLES *********/
+#slider {
+  margin-bottom: 150px;
+}
+.flexslider ul li > div {
+  height: 0;
+  padding-top: 46.7%;
+  position: relative;
+}
+.flexslider > li > div {
+  background-size: cover;
+}
+.slide1 {
+  background-image: url(images/slider/slider01-small.jpg);
+}
+.cta {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(6, 25, 35, 0.5);
+  padding: 10px;
+  color: white;
+  width: 100%;
+}
+.cta h2 {
+  font-size: 20px;
+  color: white;
+}
+
+/********** OVERVIEW STYLES *********/
+.intro h2 {
+  font-size: 30px;
+}
+.intro p {
+  font-size: 20px;
+}
+#overview section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+/********** DOWNLOAD STYLES *********/
+#download {
+  background-color: var(--tea-green-light);
+  padding: 0;
+}
+#download ul {
+  list-style-type: none;
+}
+/* muitas coisas só fazem sentido pós script */
+.eachfeature li {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#download ul li a {
+  font-family: 'Quicksand';
+  font-weight: 600;
+  color: var(--firey-rose);
+}
+#download article {
+  padding: 20px;
+}
+#download article:first-of-type {
+  display: flex;
+}
+#download > article > div {
+  margin-right: 20px;
+}
+#download article div img {
+  width: 70px;
+  margin: auto;
+}
+#download article img {
+  margin: auto;
+}
+#download article:first-of-type ul {
+  margin-top: 30px;
+}
+/* nth-child() é o oposto do first-of-type, pois ele começa pelo o ultimo, porém ele tem a possibilidade de variação, neste caso: (2) - que seria o segundo (article) de baixo pra cima*/
+#download article:nth-child(2) {
+  background-color: var(--tea-green);
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+#feature-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+#features {
+  position: absolute;
+  top: 0;
+}
+#download article:nth-child(2) a {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #364a14;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--jasmine);
+  font-family: 'Quicksand';
+}
+
+/********** PRICING STYLES *********/
+
+/********** LISTEN STYLES *********/
+
+/********** OUR TEAM STYLES *********/
