@@ -23,6 +23,7 @@ a {
   --jasmine: #ffe099;
   --tea-green: #c8d6af;
   --tea-green-light: #f7ffea;
+  --tea-green-subtle-light: #fcf7ed;
   --english-violet: #48284a;
 }
 
@@ -237,7 +238,261 @@ header nav ul li a {
 }
 
 /********** PRICING STYLES *********/
+#pricing {
+  background-color: var(--english-violet);
+  color: white;
+}
+#pricing h2 {
+  color: white;
+}
+#tabs > ul {
+  display: flex;
+  list-style-type: none;
+}
+#tabs > ul > li > a {
+  background-color: var(--tea-green);
+  color: var(--rich-black);
+  display: block;
+  height: 30px;
+  margin-right: 5px;
+  padding: 0 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#tabs > div {
+  display: none;
+  padding: 15px;
+  background: var(--tea-green-light);
+  color: var(--rich-black);
+  border-top-right-radius: 10px;
+  min-height: 500px;
+}
+#tabs > div:first-of-type {
+  display: block;
+  background: var(--tea-green-light);
+}
+#tabs > ul > li:first-of-type a {
+  background: var(--tea-green-light);
+}
+#tabs > div ul {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+#tabs > div ul li {
+  margin-bottom: .5em;
+}
+#tabs > div article {
+  margin-bottom: 20px;
+}
+#tabs div h3 {
+  color: var(--firey-rose);
+  text-align: center;
+}
+#tabs > div h4 {
+  text-align: center;
+}
 
 /********** LISTEN STYLES *********/
+#listen {
+  padding: 0;
+}
+#listen article {
+  padding: 20px;
+}
+#listen article:first-of-type {
+  background: var(--rich-black);
+  color: white;
+}
+#listen h2 {
+  color: white;
+}
+#listen blockquote {
+  font-size: 28px;
+  line-height: 1.3em;
+
+  text-indent: -.4em;
+}
+#listen blockquote footer {
+  margin: 0;
+  font-size: .6em;
+}
+#listen blockquote footer span {
+  color: var(--firey-rose);
+}
 
 /********** OUR TEAM STYLES *********/
+#ourteam {
+  background: var(--tea-green-subtle-light);
+}
+#ourteam h2 {
+  color: var(--rich-black);
+}
+#ourteam article div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+#ourteam figure {
+  margin: 0;
+}
+#ourteam div figure {
+  width: 48%;
+}
+#ourteam article figure img {
+  border-radius: 50%;
+  max-width: 80%;
+  margin: auto;
+}
+#ourteam figcaption {
+  font-family: 'Quicksand';
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px 0;
+}
+#ourteam figcaption span {
+  color: var(--firey-rose);
+}
+
+/********** FOOTER STYLES *********/
+#page > footer {
+  background: var(--rich-black);
+  margin-bottom: 0;
+}
+footer .logo {
+  margin-bottom: 20px;
+}
+footer .logo h1 {
+  color: var(--jasmine);
+}
+footer nav ul {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+footer article h2 {
+  font-size: 20px;
+  text-align: center;
+  color: var(--jasmine);
+}
+footer article a {
+  color: var(--jasmine);
+}
+
+/********** TABLET SIZE STYLES *********/
+@media only screen and (min-width: 760px) {
+  /* slider styles */
+  #slider .cta {
+    width: 50%;
+    right: 0;
+  }
+  .slide1 {
+    background-image: url(images/slider/slider01-medium.jpg);
+  }
+  
+  /* overview styles */
+  #overview {
+    display: flex;
+  }
+  #overview > article {
+    flex: 2;
+    margin-right: 20px;
+  }
+  #overview > section {
+    flex: 3;
+    padding-top: 3em;
+  }
+
+  /* dowload styles */
+  #download {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #download article {
+    flex: 1;
+  }
+  #download article:last-of-type {
+    flex: 100%;
+  }
+  #feature-container {
+    height: 90%;
+  }
+
+  /* pricing styles */
+  #pricing {
+    display: flex;
+  }
+  #pricing article:first-of-type {
+    flex: 2;
+    margin-right: 20px;
+  }
+  #pricing article:last-of-type {
+    flex: 3;
+  }
+
+  /* listen styles */
+  #listen {
+    display: flex;
+  }
+  #listen article:first-of-type {
+    flex: 2;
+  }
+  #listen article:last-of-type {
+    flex: 5;
+  }
+
+  /* our team styles */
+  #ourteam article {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #ourteam article div:first-of-type {
+    flex-direction: column;
+    flex: 2;
+    align-items: center;
+  }
+  #ourteam article div:last-of-type {
+    flex: 3;
+    padding: 0 20px;
+  }
+  #ourteam article h2 {
+    flex: 100%;
+  }
+  #ourteam figure {
+    padding: 20px 0;
+  }
+  #ourteam figure img {
+    margin: auto;
+  }
+
+  /* footer styles */
+  #page > footer {
+    display: flex;
+  }
+  #page > footer .logo {
+    flex: 1;
+    margin: 0;
+  }
+  #page > footer nav {
+    flex: 1;
+    margin: 10px 20px 0 0;
+  }
+  #page > footer article {
+    flex: 2;
+    margin-top: 10px;
+  }
+}
+
+/******* LARGE TABLET SIZE STYLES ******/
+@media only screen and (min-width: 1020px) {
+  
+}
+
+/********* DESKTOP SIZE STYLES *********/
+@media only screen and (min-width: 1200px) {
+  
+}
+
+/********* MAXIMUM SIZE STYLES *********/
+@media only screen and (min-width: 1500px) {
+  
+}
