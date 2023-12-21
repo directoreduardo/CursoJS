@@ -484,7 +484,101 @@ footer article a {
 
 /******* LARGE TABLET SIZE STYLES ******/
 @media only screen and (min-width: 1020px) {
-  
+  /* body, header and slider styles */
+  body {
+    padding: 0;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo {
+    flex: 1;
+    margin-left: 20px;
+  }
+  header nav {
+    flex: 2;
+  }
+  header nav ul {
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  header nav ul li a {
+    padding: 20px 10px;
+  }
+  #slider .cta {
+    width: 33%;
+    padding: 30px;
+  }
+
+  /* download styles */
+  #download {
+    flex-wrap: nowrap;
+  }
+  #download article:first-of-type {
+    display: block;
+    flex: 2;
+  }
+  #download article:nth-child(2) {
+    flex: 3;
+  }
+  #download article:last-of-type {
+    flex: 5 0;
+  }
+
+  /* pricing styles */
+  #pricing article:first-of-type {
+    flex: 1;
+  }
+  #pricing article:last-of-type {
+    flex: 4;
+  }
+  #pricing .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  #pricing .container article {
+    flex: 1;
+    padding: 0 10px 40px 10px;
+    margin: 0;
+    position: relative;
+  }
+  #pricing .container article button {
+    position: absolute;
+    bottom: 0;
+  }
+
+  /* listen styles */
+  #listen article:first-of-type {
+    flex: 1;
+  }
+  #listen article:last-of-type {
+    flex: 4;
+  }
+  #listen blockquote {
+    font-size: 36px;
+  }
+
+  /* our team styles */
+  #ourteam {
+    display: flex;
+  }
+  #ourteam > article {
+    flex: 1;
+  }
+  #ourteam > figure {
+    flex: 1;
+  }
+  #ourteam div figure {
+    width: 100%;
+  }
+  #ourteam article div:first-of-type {
+    flex: 1;
+  }
+  #ourteam article div:last-of-type {
+    flex: 2;
+  }
 }
 
 /********* DESKTOP SIZE STYLES *********/
