@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Basics</title>
+  <style>
+    input, label {
+      display: block;
+    }
+    input {
+      margin-bottom: 15px;
+    }
+    fieldset input, fieldset label {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <!-- FORM é uma das mais importaes maneiras pelas quais os usuários interagem com o conteúdo da web. A tag form geralmente é acompanhada desses dois atributos. O atributo method informa ao formulario (form) como enviar os dados do formulario, a ação diz para onde enviá-los -->
+
+  <h1>Form Basics</h1>
+  <form method="post" action="processor.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Bill" required>
+
+    <label for="favcolor">Favorite Color</label>
+    <input type="color" name="favcolor" id="favcolor">
+
+    <fieldset>
+      <legend>Do You Want Spam?</legend>
+      <input type="radio" name="spam" id="spam-yes" value="yes">
+      <label for="spam-yes">Yes, send me spam!</label>
+
+      <input type="radio" name="spam" id="spam-no" value="no" checked>
+      <label for="spam-yes">No, don't send spam!</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Favorite Animal</legend>
+      <input type="checkbox" name="cat" id="cat" value="Cat" checked>
+      <label for="cat">Cat</label>
+      
+      <input type="checkbox" name="dog" id="dog" value="Dog">
+      <label for="dog">Dog</label>
+    </fieldset>
+    
+    <label for="cheese">Select Favorite Cheese</label>
+    <select name="cheese" id="cheese">
+      <option value="American">American</option>
+      <option value="Swiss">Swiss</option>
+      <option value="Brie">Brie</option>
+    </select>
+
+    <label for="comment">Please Tell Us What You Think</label>
+    <textarea name="comment" id="comment" cols="50" rows="10"></textarea>
+
+    <input type="submit" name="submit" id="submit">
+  </form>
+</body>
+</html>
