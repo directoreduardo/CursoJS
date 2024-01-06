@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  text-align: center;
+}
+#stage {
+  width: 400px;
+  margin: auto;
+  line-height: 150px;
+  border: 2px solid #ccc;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+#seating {
+  overflow: hidden;
+  width: 730px;
+  margin: auto;
+  padding-left: 10px;
+}
+#seating section {
+  float: left;
+}
+#seating section div {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 30px;
+  line-height: 26px;
+  border: 2px solid #ccc;
+  text-align: center;
+  font-size: 12px;
+}
+#seating .label {
+  border: 2px solid #fff;
+  text-transform: uppercase;
+}
+#left, #right {
+  width: 160px;
+}
+#middle {
+  width: 360px;
+  margin: 0 20px;
+}

@@ -1,0 +1,5 @@
+O sistema de reserva de assentos (seat reservation system) possui funcionalidade simples. Você pode selecionar assentos e reservá-los.
+
+Além da funcionalidade óbvia, o sistema de reserva de assentos lida com erros, como o que acontece quando alguém tenta reservar um assento, mas não selecionou nenhum assento.
+
+Nos bastidores, há um objeto que simula o tipo de coisa que você obteria de um banco de dados e uma matriz que monitora os assentos enquanto você os seleciona. Quando a reserva for concluída, os assentos selecionados serão adicionados ao objeto (para serem salvos no banco de dados)
