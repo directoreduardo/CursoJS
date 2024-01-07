@@ -3,3 +3,54 @@ O sistema de reserva de assentos (seat reservation system) possui funcionalidade
 Além da funcionalidade óbvia, o sistema de reserva de assentos lida com erros, como o que acontece quando alguém tenta reservar um assento, mas não selecionou nenhum assento.
 
 Nos bastidores, há um objeto que simula o tipo de coisa que você obteria de um banco de dados e uma matriz que monitora os assentos enquanto você os seleciona. Quando a reserva for concluída, os assentos selecionados serão adicionados ao objeto (para serem salvos no banco de dados)
+
+
+
+
+const rows = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t"]
+
+/* --------THE LEFT SIDE-------- */
+let html = ""
+let counter = 1
+
+/* o método forEach() é um método array, o que significa que você o executa em um array, como "linhas" ("rows"). Então você pode passar uma função, e essa função recebe um argumento que representa cada elemento do array. */
+rows.forEach(function(row) {
+  html += `<div class="label">${row}</div>`
+
+  for(let i=0; i<3; i++) {
+    html += `<div id="${row + counter}">${counter}</div>`
+    counter++
+  }
+  /* isso com certeza está gerando os assentos, mas a numeração está errada. A fila "B" começa no assento 4, mas você realmente quer que comece no assento 16 */
+  counter = counter + 12
+})
+document.querySelector('#left').innerHTML = html
+
+/* ------THE RIGHT SIDE------- */
+html = ""
+counter = 1
+rows.forEach(function(row) {
+  counter = counter + 12 //o contador +12 é adicionado acima
+  for(let i=0; i<3; i++) {
+    html += `<div id="${row + counter}">${counter}</div>`
+    counter++
+  }
+  /* e o label fica por ultimo */
+  html += `<div class="label">${row}</div>`
+})
+document.querySelector('#right').innerHTML = html
+
+/* -------MIDDLE SECTION------- */
+html = ""
+counter = 1
+rows.forEach(function(row) {
+  counter = counter + 3 //o contador agora é +3
+  for(let i=0; i<9; i++) {/* muda do 3 pro 9 */
+    html += `<div id="${row + counter}">${counter}</div>`
+    counter++
+  }
+  /* repete o contador acima */
+  counter = counter + 3
+  /* não precisamos do label aqui */
+})
+document.querySelector('#middle').innerHTML = html
