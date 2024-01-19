@@ -132,10 +132,10 @@ makeRows(3, 15, 'right')
 makeRows(9, 15, 'middle')
 
 /* =--=================--= */
-(function(){
-  'use strict'
-  for (const key in reservedSeats) {
-  if (reservedSeats.hasOwnProperty(key)) {
+
+'use strict'
+for (const key in reservedSeats) {
+if (reservedSeats.hasOwnProperty(key)) {
     const obj = reservedSeats[key]
     console.log(obj.seat) 
 
@@ -143,7 +143,7 @@ makeRows(9, 15, 'middle')
     document.getElementById(obj.seat).innerHTML = 'R'
   } 
 }
-}())
+
 
 /* ------------------ */
 (function(){
@@ -151,9 +151,28 @@ makeRows(9, 15, 'middle')
   let selectSeats = []
   let seats = document.querySelectorAll('.a')
 
-  seats.forEach(function(seat) {
-    seat.addEventListener('click', function(event) {
-      //
+  seats.forEach(seat => {
+    seat.addEventListener('click', () => {
+      console.log(seat.id) 
+      // pegar o id do seat, executar uma função (seatSelectionProcess) que adiciona ou remove o seat do array
+      seatSelectionProcess(seat.id)
     })
   })
+
+  function seatSelectionProcess(thisSeat) {
+    //adicionar ou remover seats do array
+    let index = selectSeats.indexOf(thisSeat)
+    console.log(index)
+
+    if (index > -1) {
+      //deve estar no array. retire-o e coloque a classe de volta em 'a'
+      selectSeats.splice(index, 1)
+      document.getElementById(thisSeat).className = 'a'
+    }else {
+      //adicione ao array (usando o push()). coloque a classe do seat em 's'
+      selectSeats.push(thisSeat)
+      document.getElementById(thisSeat).className = 's'
+    }
+    console.log(selectSeats)
+  }
 }())
