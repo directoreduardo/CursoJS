@@ -46,6 +46,37 @@ rows.forEach(function(row) {
 })
 document.querySelector('#middle').innerHTML = html */
 
+var reservedSeats = {
+  record1: {
+    seat:"b19",
+    owner: {
+      fname:"Joe",
+      lname:"Smith"
+    }
+  },
+  record2: {
+    seat:"b20",
+    owner: {
+      fname:"Joe",
+      lname:"Smith"
+    }
+  },
+  record3: {
+    seat:"b21",
+    owner: {
+      fname:"Joe",
+      lname:"Smith"
+    }
+  },
+  record4: {
+    seat:"b22",
+    owner: {
+      fname:"Joe",
+      lname:"Smith"
+    }
+  }
+}
+
 /* ----------------------------------------- */
 /* ----MODO MAIS RESUMIDO É "MODERNO----" */
 /* // Para cada coluna... */
@@ -99,3 +130,30 @@ function makeRows(sectionLength, rowLength, placement) {
 makeRows(3, 15, 'left')
 makeRows(3, 15, 'right')
 makeRows(9, 15, 'middle')
+
+/* =--=================--= */
+(function(){
+  'use strict'
+  for (const key in reservedSeats) {
+  if (reservedSeats.hasOwnProperty(key)) {
+    const obj = reservedSeats[key]
+    console.log(obj.seat) 
+
+    document.getElementById(obj.seat).className = 'r'
+    document.getElementById(obj.seat).innerHTML = 'R'
+  } 
+}
+}())
+
+/* ------------------ */
+(function(){
+  'use strict'
+  let selectSeats = []
+  let seats = document.querySelectorAll('.a')
+
+  seats.forEach(function(seat) {
+    seat.addEventListener('click', function(event) {
+      //
+    })
+  })
+}())

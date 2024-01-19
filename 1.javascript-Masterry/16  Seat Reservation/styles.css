@@ -46,3 +46,15 @@ h1 {
   width: 360px;
   margin: 0 20px;
 }
+.a:hover, .s:hover {
+  cursor: pointer;
+}
+.a:hover {
+  background: #f9e300;
+}
+.s {
+  background: #f62bc8;
+}
+.r {
+  background: #ff0000;
+}
