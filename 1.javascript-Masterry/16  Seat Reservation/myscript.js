@@ -173,6 +173,62 @@ if (reservedSeats.hasOwnProperty(key)) {
       selectSeats.push(thisSeat)
       document.getElementById(thisSeat).className = 's'
     }
+    //executando a função (mais abaixo está o código aqui executado)
+    manageConfirmForm()
     console.log(selectSeats)
   }
+
+  /* -------------------------------------- */
+  /* abrir e fechar manipuladores de eventos de formulário */
+
+  //EventListener para o botão de reserva abrir o formulário
+  document.querySelector('#reserve').addEventListener('click', function(event) {
+    event.preventDefault() //previne que apareça '#' no link da pagina ao interagir com o botão 'reserve'
+    document.querySelector('#resform').style.display="block"
+  })
+  //EventListener para fechar o formulário se alguém clicar em cancelar
+  document.querySelector('#cancel').addEventListener('click', function(event) {
+    event.preventDefault()
+    document.querySelector('#resform').style.display="none"
+  })
+
+  /* --------------------------------------- */
+  /* se nenhum seat (assento) for selecionado, os usuários não poderão preencher o formulário e clicar no botão de reserva. */
+
+  //crie uma função chamada manageConfirmForm() e tenha uma instrução if/else que verifica se há algo no array selectedSeats.
+  function manageConfirmForm() {
+    //se houver, defina o elemento com id="confirmres" para display 'block', se não houver defina-o para display 'none'
+    if(selectSeats.length > 0) {
+      document.querySelector('#confirmres').style.display="block"
+      //para n haver contradição visual e deixar mais completo e didatico as seats escolhidas. seat no singular e no plural (seats):
+      if(selectSeats.length === 1) {
+        document.querySelector('#selectedseats').innerHTML = `You have selected seat: ${selectSeats[0]}`
+      } else {
+        let seatString = selectSeats.toString()
+        //para que haja espaço nas string seats e um "and" no final da ultima seat
+        seatString = seatString.replace(/,/g, ", ")
+        seatString = seatString.replace(/,(?=[^,]*$)/, ' and')
+        document.querySelector('#selectedseats').innerHTML = `You have selected some seats: ${seatString}`
+      }
+    } else {
+      document.querySelector('#confirmres').style.display="none"
+      //proxima etapa/desafio:
+      /* 
+      Ao invés de mostrar o formulário, o parágrafo com id definido como "selectedseats" precisa ter este HTML:
+      'You need to select some seats to reserve. <br><a href="#" id="error">Close</a> this dialogo box and pick at least one seat.'
+      */
+      document.querySelector('#selectedseats').innerHTML = 'You need to select some seats to reserve. <br><a href="#" id="error">Close</a> this dialogo box and pick at least one seat.'
+      //agora precisamos adicionar um 'manipulador de cliques' na função para que, ao clicar em #error, feche a caixa de dialogo de novo
+      document.querySelector('#error').addEventListener('click', function() {
+        document.querySelector('#resform').style.display="none"
+      })
+    }
+  }
+  /* ------------------------------------ */
+  /* EXECUTANDO A FUNÇÃO */
+  //toda vez que você adiciona ou remove um assento dentro e fora do array, esta função deve ser executada
+  //então isso significa que ele precisa entrar na função seatSelectionProcess()
+  //onde mais ele precisa ser executado?
+  /* execute-o imediatamente, quando a página carregar! */
+  manageConfirmForm()
 }())

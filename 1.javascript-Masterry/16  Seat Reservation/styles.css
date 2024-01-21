@@ -70,7 +70,7 @@ h1 {
   text-decoration: none;
 }
 #resform {
-  /* display: none; */ /* inicialmente invisivel */
+  display: none; /* inicialmente invisivel */
   position: absolute;
   top: 10%;
   left: 30%;
