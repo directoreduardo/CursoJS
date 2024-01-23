@@ -137,7 +137,7 @@ makeRows(9, 15, 'middle')
 for (const key in reservedSeats) {
 if (reservedSeats.hasOwnProperty(key)) {
     const obj = reservedSeats[key]
-    console.log(obj.seat) 
+    /* console.log(obj.seat) */ 
 
     document.getElementById(obj.seat).className = 'r'
     document.getElementById(obj.seat).innerHTML = 'R'
@@ -149,7 +149,7 @@ if (reservedSeats.hasOwnProperty(key)) {
 (function(){
   'use strict'
   let selectSeats = []
-  let seats = document.querySelectorAll('.a')
+  const seats = document.querySelectorAll('.a')
 
   seats.forEach(seat => {
     seat.addEventListener('click', () => {
@@ -160,22 +160,32 @@ if (reservedSeats.hasOwnProperty(key)) {
   })
 
   function seatSelectionProcess(thisSeat) {
-    //adicionar ou remover seats do array
-    let index = selectSeats.indexOf(thisSeat)
-    console.log(index)
+    /* 
+    Uma última questão (reparos)...
 
-    if (index > -1) {
-      //deve estar no array. retire-o e coloque a classe de volta em 'a'
-      selectSeats.splice(index, 1)
-      document.getElementById(thisSeat).className = 'a'
-    }else {
-      //adicione ao array (usando o push()). coloque a classe do seat em 's'
-      selectSeats.push(thisSeat)
-      document.getElementById(thisSeat).className = 's'
-    }
-    //executando a função (mais abaixo está o código aqui executado)
-    manageConfirmForm()
-    console.log(selectSeats)
+    Depois de reservar alguns assentos (seats), você ainda consegue selecioná-los novamente, mesmo eles tendo ficado vermelhos e tenham o 'R' dentro deles.
+
+    isso ocorre porque quando a página foi carregada, esses elementos tiveram o eventListener adicionado a eles, e mesmo que a classe e o html desses dois elementos tenham mudado, o eventListener ainda está lá
+    */
+    //isso adicionará apenas itens ao array que NÃO possuem a classe "r" (note o !)
+    if(!document.getElementById(thisSeat).classList.contains('r')) {
+      //adicionar ou remover seats do array
+      let index = selectSeats.indexOf(thisSeat)
+      console.log(index)
+
+      if (index > -1) {
+        //deve estar no array. retire-o e coloque a classe de volta em 'a'
+        selectSeats.splice(index, 1)
+        document.getElementById(thisSeat).className = 'a'
+      }else {
+        //adicione ao array (usando o push()). coloque a classe do seat em 's'
+        selectSeats.push(thisSeat)
+        document.getElementById(thisSeat).className = 's'
+      }
+      //executando a função (mais abaixo está o código aqui executado)
+      manageConfirmForm()
+      console.log(selectSeats)
+    }  
   }
 
   /* -------------------------------------- */
@@ -231,4 +241,50 @@ if (reservedSeats.hasOwnProperty(key)) {
   //onde mais ele precisa ser executado?
   /* execute-o imediatamente, quando a página carregar! */
   manageConfirmForm()
+  /* ------------------------------------ */
+
+  /* CONFIGURANDO AS ETAPAS FINAIS */
+  //quando este formulário é enviado, uma função chamada processReservation() é executada
+  document.querySelector("#confirmres").addEventListener('submit', function(event) {
+    event.preventDefault()
+    processReservation()
+  })
+  function processReservation() {
+    //para começar, nesta função, você precisa saber quantos registros já estão no objeto reservadoSeats (ou foram reservados e estão no banco de dados)
+    const hardCodeRecords = Object.keys(reservedSeats).length
+    //então você precisa obter o nome e o sobrenome da pessoa que os reservou, no formulário
+    const fname = document.querySelector('#fname').value
+    const lname = document.querySelector('#lname').value
+    let counter = 1
+    let nextRecord = ''
+
+    selectSeats.forEach(function(thisSeat) {
+      //defina o nome da classe como "r"
+      document.getElementById(thisSeat).className = 'r'
+      //defina o innerHTML desse seat <div> como "R"
+      document.getElementById(thisSeat).innerHTML = 'R'
+
+      //adicione cada registro ao objeto reservadoSeats
+      //nextRecord deve ter record5 pela primeira vez no array. Este é o número do hardCodeRecords mais 1 (counter)
+      nextRecord = `record${hardCodeRecords + counter}`
+      reservedSeats[nextRecord] = {
+        seat:thisSeat,
+        owner:{
+          fname:fname,
+          lname:lname
+        }
+      }
+      counter++
+    })
+    /* ------------ */
+    /* LIMPEZA...
+
+    Depois de passar pelo array selectSeats e adicionar os registros ao objeto reservedSeats, você precisa fechar o formulário, esvaziar o array selectSeats e executar a função manageConfirmForm novamente para redefinir seu estado original. */
+    document.querySelector('#resform').style.display="none"
+    selectSeats = []
+    manageConfirmForm()
+
+    //voce pode ver o resultado no console
+    console.log(reservedSeats)
+  }
 }())
