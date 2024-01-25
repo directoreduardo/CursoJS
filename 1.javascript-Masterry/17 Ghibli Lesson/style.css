@@ -16,3 +16,7 @@ h1, h2, h3 {
 h1 {
   position: absolute;
 }
+
+header img {
+  max-width: 75%;
+}
