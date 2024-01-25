@@ -1,0 +1,18 @@
+h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'IBM PLex Sans';
+  font-weight: 300;
+  color: #333;
+  background-color: #efefef;
+}
+h1, h2, h3 {
+  font-family: 'Flavors';
+  font-weight: 400;
+  margin-bottom: .5em;
+}
+h1 {
+  position: absolute;
+}
