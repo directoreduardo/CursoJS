@@ -1,0 +1,29 @@
+const elementNode = document.createElement('p');
+<<undefined
+
+const textNode = document.createTextNode('Content');
+<<undefined
+
+const attributeNode = document.createAttribute('class');
+<<undefined
+------
+elementNode;
+< <p></p>
+
+textNode;
+< "Content"
+
+attributeNode;
+< Class=""
+------
+elementNode.appendChild(textNode);
+< "Content"
+
+elementNode;
+< <p>Content</p>
+
+attributeNode.value = 'some-class';
+< "some-class"
+
+attributeNode;
+< class="some-class"
