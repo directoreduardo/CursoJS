@@ -27,3 +27,11 @@ attributeNode.value = 'some-class';
 
 attributeNode;
 < class="some-class"
+
+elementNode.setAttribueNode(attributeNode);
+<<null
+
+elementNode;
+< <p class="some-class">Content</p>
+------
+document.body.appendChild(elementNode);
