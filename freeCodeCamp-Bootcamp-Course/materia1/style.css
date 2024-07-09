@@ -1,0 +1,123 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Karla';
+  font-size: 16px;
+}
+
+body {
+  padding: 20px;
+}
+
+h2, h4, p {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#card  {
+  /* border: 3px solid red; */
+  width: 600px;
+  height: 400px;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  overflow: hidden; /* um pequeno truque pra que as bordas de baixo do card seja modificada pelo código acima. */
+}
+
+#top-section {
+  /* border: 2px solid green; */
+  width: 100%;
+  height: 45%;
+  padding: 25px;
+}
+
+#bottom-section {
+  /* border: 2px solid blue; */
+  width: 100%;
+  height: 55%;
+  color: white;
+}
+
+#bottom-left-section {
+  display: inline-block;
+  /* border: 2px solid orange; */
+  width: 50%;
+  height: 100%;
+  vertical-align: top; /* por existir dois "inline-block" ao lado um do outro, pode existir um pequeno bug na qual uma das div desce e não fica alinhado. Esse código resolve esse problema */
+  background-color: #2ab2af;
+  padding: 25px;
+}
+
+#bottom-right-section {
+  display: inline-block;
+  /* border: 2px solid black; */
+  width: 50%;
+  height: 100%;
+  vertical-align: top; /* só por precaução */
+  background-color: #2ebfbd;
+  padding: 25px;
+}
+
+#top-section h2 {
+  color: #2ab2af;
+  margin-bottom: 20px;
+}
+
+#top-section h4 {
+  color: #c0df34;
+  margin-bottom: 10px;
+}
+
+#top-section p {
+  color: #98a6bd;
+}
+
+button {
+  color: white;
+  background-color: #c0df34;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #b2cf30;
+  transform: scale(1.02);
+}
+
+#price {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+#price-frequency, #price {
+  display: inline-block;
+}
+
+#price-frequency {
+  position: relative;
+  top: -3px; /* pra subir um pouco */
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-left: 5px;
+}
+
+#bottom-left-section h4 {
+  margin-bottom: 25px;
+}
+
+#bottom-left-section p {
+  font-size: 0.8rem;
+  margin-bottom: 33px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+
+}
